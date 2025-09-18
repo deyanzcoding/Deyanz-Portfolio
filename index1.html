@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deyan Ahmad - CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: #2c3e50;
+            color: white;
+            padding: 18px 40px 18px 40px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
+
+        .name {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2px;
+            letter-spacing: 2px;
+        }
+
+        .title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            font-size: 0.9rem;
+        }
+
+        .contact-item {
+            color: white;
+            text-decoration: none;
+        }
+
+        .contact-item:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            min-height: calc(100vh - 200px);
+        }
+
+        .sidebar {
+            background: #ecf0f1;
+            padding: 30px 25px;
+            border-right: 1px solid #ddd;
+        }
+
+        .content {
+            padding: 30px 35px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .skill-item,
+        .language-item,
+        .quality-item {
+            padding: 3px 0;
+            font-size: 0.95rem;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-title {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 3px;
+            font-size: 1rem;
+        }
+
+        .education-institution {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+
+        .education-date {
+            color: #888;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        .courses-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .course-item {
+            background: #2c3e50;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-section {
+            margin-bottom: 20px;
+        }
+
+        .project-category {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .project-list {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .project-list li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .project-list li:before {
+            content: '•';
+            color: #2c3e50;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .interest-item {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .cv-container {
+                margin: 0;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: center;
+                padding: 18px 10px;
+                gap: 12px;
+                text-align: center;
+            }
+
+            .name {
+                font-size: 1.8rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .sidebar,
+            .content {
+                padding: 20px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+                color: black;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                max-width: none;
+                margin: 0;
+            }
+
+            .header {
+                background: #2c3e50 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .sidebar {
+                background: #f8f8f8 !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .course-item {
+                background: #2c3e50 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+
+            .section-title {
+                border-bottom-color: #2c3e50 !important;
+            }
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 0.9rem;
+        }
+
+        .print-btn:hover {
+            background: #34495e;
+        }
+
+        @media print {
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cv-container">
+     <header class="header" 
+        style="background: #2c3e50; color: white; padding: 18px 40px; 
+               text-align: left; display: flex; align-items: center; gap: 28px;">
+
+  <!-- Profile Picture -->
+  <div style="width: 110px; height: 110px; flex-shrink: 0;">
+    <img src="deyan_white.jpg" alt="Deyan Ahmad Profile Picture"
+         style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%;
+                border-radius: 50%; border: 3px solid #fff; 
+                box-shadow: 0 4px 12px rgba(0,0,0,0.2); background: #eaeaea;">
+  </div>
+
+  <!-- Middle: Name + Subtitle -->
+  <div style="flex: 1; display: flex; flex-direction: column; justify-content: center; ">
+    <h1 style="margin: 0; font-size: 2rem; font-family: 'Poppins', sans-serif; 
+               font-weight: 700; color: white;">
+      Deyan Ahmad
+    </h1>
+    <p style="margin: 4px 0 0; font-size: 1.1rem; font-family: 'Lato', sans-serif; 
+              letter-spacing: 1px; color: #ddd; font-weight: 400;">
+      Flutter &amp; Dart Developer 📱
+    </p>
+  </div>
+
+  <!-- Right: Contact Info -->
+<div class="contact-info" 
+         style="display: flex; flex-direction: column; align-items: flex-start; 
+                        gap: 8px; font-size: 0.95rem; color: white;">
+
+    <a href="mailto:deyanahmad@gmail.com" 
+         style="text-decoration: none; color: white; display: flex; align-items: center; gap: 6px;">
+        📧 deyanahmad@gmail.com
+    </a>
+    <span style="display: flex; align-items: center; gap: 6px;">📞 0348-9097502</span>
+    <span style="display: flex; align-items: center; gap: 6px;">📍 Mardan, KPK, Pakistan</span>
+    <a href="https://www.linkedin.com/in/deyan-ahmad-b11163219/" target="_blank" 
+         style="text-decoration: none; color: #1da1f2; display: flex; align-items: center; gap: 6px;">
+        🔗 LinkedIn
+    </a>
+
+    <a href="https://github.com/deyanzcoding" target="_blank" 
+         style="text-decoration: none; color: #f5f5f5; display: flex; align-items: center; gap: 6px;">
+        <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub" style="width:18px; height:18px; vertical-align:middle; border-radius:3px;">
+        GitHub
+    </a>
+</div>
+</header>
+
+
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="skill-item">Flutter Development</div>
+                    <div class="skill-item">Web Development</div>
+                    <div class="skill-item">C, C++, Java</div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Languages</h2>
+                    <div class="language-item">English</div>
+                    <div class="language-item">Urdu</div>
+                    <div class="language-item">Pashto</div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Core Competencies</h2>
+                    <div class="quality-item">Project Management</div>
+                    <div class="quality-item">Problem Solving</div>
+                    <div class="quality-item">Creative Thinking</div>
+                    <div class="quality-item">Time Management</div>
+                    <div class="quality-item">Team Collaboration</div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Interests</h2>
+                    <div class="interests-list">
+                        <span class="interest-item">Coding</span>
+                        <span class="interest-item">Gaming</span>
+                        <span class="interest-item">Technology</span>
+                        <span class="interest-item">Music</span>
+                        <span class="interest-item">Poetry</span>
+                    </div>
+                </section>
+            </aside>
+
+            <main class="content">
+                <section class="section">
+                    <h2 class="section-title">Education</h2>
+
+                    <div class="education-item">
+                        <div class="education-title">Bachelor's Degree (In Progress)</div>
+                        <div class="education-institution">Abdul Wali Khan University, Mardan</div>
+                        <div class="education-date">November 2023 - Present</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-title">Higher Secondary Education</div>
+                        <div class="education-institution">Punjab Group Of Colleges, Mardan</div>
+                        <div class="education-date">September 2021 - September 2023</div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-title">Secondary Education</div>
+                        <div class="education-institution">Frontier Comprehensive School (FCS), Shergarh</div>
+                        <div class="education-date">July 2019 - July 2021</div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Technical Courses</h2>
+                    <div class="courses-list">
+                        <span class="course-item">C Programming</span>
+                        <span class="course-item">C++</span>
+                        <span class="course-item">Java</span>
+                        <span class="course-item">Flutter</span>
+                        <span class="course-item">Web Development</span>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Projects</h2>
+
+                    <div class="project-section">
+                        <div class="project-category">Mobile Applications (Flutter)</div>
+                        <ul class="project-list">
+                            <li>University Learning Management System - Complete LMS with student/teacher interfaces
+                            </li>
+                            <li>WhatsApp UI Clone - Replica of WhatsApp interface with Flutter</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-section">
+                        <div class="project-category">Desktop Applications (C++)</div>
+                        <ul class="project-list">
+                            <li>Attendance Management System - Automated attendance tracking system</li>
+                            <li>GPA Calculator - Student grade point average calculation tool</li>
+                            <li>Number Guessing Game - Interactive console-based game</li>
+                            <li>Tailor Management System - Complete business management solution</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">Professional Summary</h2>
+                    <p style="color: #555; line-height: 1.7; font-size: 0.95rem;">
+                        Dedicated Flutter & Dart Developer with hands-on experience in building mobile and desktop
+                        applications. Strong background in programming (C, C++, Java, Dart) and web development, with
+                        projects ranging from Learning Management Systems to business management solutions. Currently
+                        pursuing a Bachelor’s degree in Computer Science at Abdul Wali Khan University, Mardan. Skilled
+                        in problem-solving, creative thinking, and team collaboration, with a passion for clean code and
+                        emerging technologies.
+                    </p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <button class="print-btn" onclick="generatePDF()">📄 Download PDF</button>
+
+    <script>
+        function generatePDF() {
+            // Show instructions for PDF generation
+            alert(`To save as PDF:\n\n1. Click "Print" or press Ctrl+P (Cmd+P on Mac)\n2. Choose "Save as PDF" as the destination\n3. Select "More settings" and choose "A4" paper size\n4. Make sure "Background graphics" is checked\n5. Click "Save"\n\nAlternatively, you can use your browser's print function with these same settings.`);
+
+            // Trigger print dialog
+            setTimeout(() => {
+                window.print();
+            }, 1000);
+        }
+
+        // Optimize for printing
+        window.addEventListener('beforeprint', function () {
+            document.body.style.background = 'white';
+        });
+
+        window.addEventListener('afterprint', function () {
+            document.body.style.background = '#f5f5f5';
+        });
+    </script>
+</body>
