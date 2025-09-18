@@ -1,1244 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deyan Ahmad - Flutter Developer Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-        
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-item a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-item a:hover {
-            color: #3498db;
-        }
-        
-        .nav-item a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #3498db;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-item a:hover::after {
-            width: 100%;
-        }
-        
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="20" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="20" cy="80" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="45" cy="30" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="70" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>') center/100px repeat;
-            animation: float 20s linear infinite;
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px) translateX(0px); }
-            33% { transform: translateY(-10px) translateX(5px); }
-            66% { transform: translateY(5px) translateX(-5px); }
-            100% { transform: translateY(0px) translateX(0px); }
-        }
-        
-        .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            align-items: center;
-            gap: 4rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-text h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: white;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .hero-text .subtitle {
-            font-size: 1.3rem;
-            color: rgba(255,255,255,0.9);
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-text p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .btn {
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-            font-size: 1rem;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: #2c3e50;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255,255,255,0.3);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-secondary:hover {
-            background: white;
-            color: #2c3e50;
-            transform: translateY(-3px);
-        }
-        
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-        
-        .profile-container {
-            position: relative;
-            width: 350px;
-            height: 350px;
-        }
-        
-        .profile-image {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.3);
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            font-weight: 700;
-            color: white;
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -50%) scale(1.05); }
-            100% { transform: translate(-50%, -50%) scale(1); }
-        }
-        
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .floating-element {
-            position: absolute;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            padding: 10px 15px;
-            color: black;
-            font-size: 0.9rem;
-            font-weight: 600;
-            
-        }
-        
-        .floating-element:nth-child(1) {
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .floating-element:nth-child(2) {
-            top: 20%;
-            right: 10%;
-            animation-delay: 1s;
-        }
-        
-        .floating-element:nth-child(3) {
-            bottom: 20%;
-            left: 5%;
-            animation-delay: 2s;
-        }
-        
-        .floating-element:nth-child(4) {
-            bottom: 10%;
-            right: 15%;
-            animation-delay: 3s;
-        }
-        
-        @keyframes floatAround {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-10px) rotate(5deg); }
-            66% { transform: translateY(5px) rotate(-5deg); }
-        }
-        
-        /* Section Styles */
-        .section {
-            padding: 80px 0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-        
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        /* About Section */
-        .about {
-            background: #f8f9fa;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .about-stats {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #3498db;
-            margin-bottom: 0.5rem;
-        }
-        
-        .stat-label {
-            color: #666;
-            font-weight: 500;
-        }
-        
-        .about-text {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-        
-        /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skill-category h3 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-        
-        .skill-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1rem;
-            padding: 0.5rem 0;
-        }
-        
-        .skill-name {
-            font-weight: 500;
-            color: #333;
-        }
-        
-        .skill-level {
-            background: #3498db;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-        
-        /* Projects Section */
-        .projects {
-            background: #f8f9fa;
-        }
-        
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .project-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-        
-        .project-image {
-            height: 200px;
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-            font-weight: 700;
-            position: relative;
-        }
-        
-        .project-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="30" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="20" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="70" r="1" fill="rgba(255,255,255,0.1)"/></svg>') center/50px repeat;
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-description {
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-tag {
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .project-link {
-            padding: 8px 16px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-        
-        .link-demo {
-            background: #3498db;
-            color: white;
-        }
-        
-        .link-demo:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
-        
-        .link-github {
-            background: transparent;
-            color: #333;
-            border: 1px solid #ddd;
-        }
-        
-        .link-github:hover {
-            background: #333;
-            color: white;
-        }
-        
-        /* Contact Section */
-        .contact {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .contact-icon {
-            font-size: 1.5rem;
-        }
-        
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-        }
-        
-        .contact-form {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.9);
-            color: #333;
-            font-size: 1rem;
-        }
-        
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-        
-        .form-btn {
-            background: white;
-            color: #2c3e50;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-        }
-        
-        .form-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(255,255,255,0.3);
-        }
-        
-        /* Footer */
-        .footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-            
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 2rem;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .profile-container {
-                width: 250px;
-                height: 250px;
-            }
-            
-            .profile-image {
-                width: 200px;
-                height: 200px;
-                font-size: 3rem;
-            }
-            
-            .floating-element {
-                display: none;
-            }
-        }
-        
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo">Deyan Ahmad</a>
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home">Home</a></li>
-                <li class="nav-item"><a href="#about">About</a></li>
-                <li class="nav-item"><a href="#skills">Skills</a></li>
-                <li class="nav-item"><a href="#projects">Projects</a></li>
-                <li class="nav-item"><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <!-- Animated Particles Background -->
-        <canvas id="particles-bg" style="position:absolute;top:0;left:0;width:100vw;height:100vh;z-index:0;"></canvas>
-        <div class="hero-content" style="position:relative;z-index:1;">
-            <div class="hero-text">
-                <h1>Hi, I'm Deyan Ahmad</h1>
-                <p class="subtitle">Flutter & Dart Developer</p>
-                <p>I craft beautiful, responsive mobile applications and desktop solutions. With expertise in Flutter, C++, and Java, I turn ideas into powerful digital experiences.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="profile-container">
-                    <div class="profile-image" style="padding:0; background:none; box-shadow:none; border:none;">
-                      <img src="deyan_white.jpg" alt="Deyan Ahmad Profile Picture" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; border-radius: 50%; border: 2px solid grey; box-shadow: 0 4px 12px rgba(0,0,0,0.2); background: #eaeaea; display: block;">
-                    </div>
-                    <div class="floating-elements">
-                      <!-- Top-left: Flutter -->
-                      <div class="floating-element" style="background:linear-gradient(90deg,#f9fd1e,#f3e307); color:#000000; border: 1px solid #764ba2; animation: floatAround 4s ease-in-out infinite; top:10%; left:10%; font-weight:bold; box-shadow:0 2px 8px rgba(102,126,234,0.13); display:flex; align-items:center; gap:6px; font-size:0.85rem; padding:7px 10px;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" style="width:16px;height:16px;vertical-align:middle;"> Flutter
-                      </div>
-                      <!-- Top-right: Dart -->
-                      <div class="floating-element" style="background:linear-gradient(90deg,#f9fd1e,#f3e307); color:#000000; border: 1px solid #185a9d; animation: floatAround 4.5s ease-in-out infinite 1s; top:20%; right:10%; font-weight:bold; box-shadow:0 2px 8px rgba(67,206,162,0.13); display:flex; align-items:center; gap:6px; font-size:0.85rem; padding:7px 10px;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="Dart" style="width:16px;height:16px;vertical-align:middle;"> Dart
-                      </div>
-                      <!-- Bottom-left: C++ -->
-                      <div class="floating-element" style="background:linear-gradient(90deg,#232526,#414345); color:#fff; border: 1px solid #232526; animation: floatAround 5s ease-in-out infinite 2s; bottom:20%; left:5%; font-weight:bold; box-shadow:0 2px 8px rgba(35,37,38,0.13); display:flex; align-items:center; gap:6px; font-size:0.8rem; padding:6px 9px;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" style="width:15px;height:15px;vertical-align:middle;"> C++
-                      </div>
-                      <!-- Bottom-right: Java -->
-                      <div class="floating-element" style="background:rgba(255,255,255,0.9); border: 1px solid grey; animation: floatAround 4.8s ease-in-out infinite 3s; bottom:10%; right:15%; display:flex; align-items:center; gap:6px; font-size:0.8rem; padding:6px 9px;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" style="width:15px;height:15px;vertical-align:middle;"> Java
-                      </div>
-                      <!-- Bottom-center: C -->
-                      <div class="floating-element" style="background:rgba(255,255,255,0.7); border: 1px solid #bbb; animation: floatAround 6s ease-in-out infinite 4s; font-size:0.75rem; color:#666; left:50%; bottom:5%; transform:translateX(-50%); display:flex; align-items:center; gap:6px; padding:5px 8px;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" style="width:13px;height:13px;vertical-align:middle;"> C
-                      </div>
-                      <!-- Top-center: HTML -->
-                      <div class="floating-element" style="background:rgba(255,255,255,0.7); border: 1px solid #bbb; animation: floatAround 6.2s ease-in-out infinite 4.5s; font-size:0.75rem; color:#666; left:50%; top:5%; transform:translateX(-50%); display:flex; align-items:center; gap:6px; padding:5px 8px;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" style="width:13px;height:13px;vertical-align:middle;"> HTML
-                      </div>
-                      <!-- Center-left: CSS -->
-                      <div class="floating-element" style="background:rgba(255,255,255,0.7); border: 1px solid #bbb; animation: floatAround 6.4s ease-in-out infinite 5s; font-size:0.75rem; color:#666; left:0; top:50%; transform:translateY(-50%); display:flex; align-items:center; gap:6px; padding:5px 8px;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" style="width:13px;height:13px;vertical-align:middle;"> CSS
-                      </div>
-                      <!-- Center-right: JavaScript -->
-                      <div class="floating-element" style="background:rgba(255,255,255,0.7); border: 1px solid #bbb; animation: floatAround 6.6s ease-in-out infinite 5.5s; font-size:0.75rem; color:#666; right:0; top:50%; transform:translateY(-50%); display:flex; align-items:center; gap:6px; padding:5px 8px;">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" style="width:13px;height:13px;vertical-align:middle;"> JavaScript
-                      </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <link rel="stylesheet" href="assets/css/styles.css">
 
-    <!-- About Section -->
-    <section id="about" class="section about">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <p class="section-subtitle fade-in">Passionate developer creating innovative solutions</p>
-            <div class="about-content">
-                <div class="about-stats fade-in">
-                    <div class="stat-item">
-                        <div class="stat-number">6+</div>
-                        <div class="stat-label">Projects Completed</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3+</div>
-                        <div class="stat-label">Years Learning</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">5+</div>
-                        <div class="stat-label">Technologies</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">100%</div>
-                        <div class="stat-label">Commitment</div>
-                    </div>
-                </div>
-                <div class="fade-in">
-                    <p class="about-text">
-                        I'm a dedicated Flutter and Dart Developer currently pursuing my Bachelor's degree at Abdul Wali Khan University. My journey in programming started with C++ and Java, but I found my passion in mobile app development with Flutter.
-                    </p>
-                    <p class="about-text">
-                        I believe in writing clean, efficient code and creating user experiences that make a difference. Whether it's a complex Learning Management System or a simple utility app, I approach every project with creativity, precision, and a commitment to excellence.
-                    </p>
-                    <a href="#contact" class="btn btn-primary">Let's Work Together</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Skills & Expertise</h2>
-            <p class="section-subtitle fade-in">Technologies I work with to bring ideas to life</p>
-            <div class="skills-grid">
-                <div class="skill-category fade-in">
-                    <h3>Mobile Development</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Flutter</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Dart</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Mobile UI/UX</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>Programming Languages</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">C++</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Java</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">C</span>
-                        <span class="skill-level">Intermediate</span>
-                    </div>
-                </div>
-                <div class="skill-category fade-in">
-                    <h3>Web & Others</h3>
-                    <div class="skill-item">
-                        <span class="skill-name">Web Development</span>
-                        <span class="skill-level">Intermediate</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Problem Solving</span>
-                        <span class="skill-level">Expert</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Project Management</span>
-                        <span class="skill-level">Advanced</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <!-- Flutter Projects Section -->
-    <section id="projects" class="section projects">
-      <div class="container">
-        <h2 class="section-title fade-in">Flutter Projects</h2>
-        <p class="section-subtitle fade-in">Mobile apps and UI built with Flutter & Dart</p>
-        <div class="projects-grid">
-          <div class="project-card fade-in">
-            <div class="project-image">📚</div>
-            <div class="project-content">
-              <h3 class="project-title">University LMS</h3>
-              <p class="project-description">A comprehensive Learning Management System built with Flutter, featuring student-teacher interfaces, course management, and real-time updates.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Flutter</span>
-                <span class="tech-tag">Dart</span>
-                <span class="tech-tag">Firebase</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/deyanzcoding/DeyanzFlutter/tree/main/login_page" class="project-link link-github" target="_blank">GitHub: University LMS</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-card fade-in">
-            <div class="project-image">💬</div>
-            <div class="project-content">
-              <h3 class="project-title">WhatsApp UI Clone</h3>
-              <p class="project-description">Pixel-perfect replica of WhatsApp's user interface built with Flutter, demonstrating advanced UI skills and attention to detail.</p>
-              <div class="project-tech">
-                <span class="tech-tag">Flutter</span>
-                <span class="tech-tag">Dart</span>
-                <span class="tech-tag">Material Design</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/deyanzcoding/Whatsapp-Clone" class="project-link link-github" target="_blank">GitHub: WhatsApp UI</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- C++ Projects Section -->
-    <section class="section projects">
-      <div class="container">
-        <h2 class="section-title fade-in">C++ Projects</h2>
-        <p class="section-subtitle fade-in">Desktop and console applications built with C++</p>
-        <div class="projects-grid">
-          <div class="project-card fade-in">
-            <div class="project-image">📊</div>
-            <div class="project-content">
-              <h3 class="project-title">Attendance Management System</h3>
-              <p class="project-description">Desktop application for automated attendance tracking with user authentication, data visualization, and comprehensive reporting features.</p>
-              <div class="project-tech">
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">File I/O</span>
-                <span class="tech-tag">Data Structures</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/deyanzcoding/Deyanz-Projects/tree/main/Cpp%20Projects/Student_Attendence_Report" class="project-link link-github" target="_blank">GitHub: Attendance Management</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-card fade-in">
-            <div class="project-image">🎯</div>
-            <div class="project-content">
-              <h3 class="project-title">GPA Calculator</h3>
-              <p class="project-description">Smart GPA calculation tool with semester management, grade tracking, and academic performance analytics for students.</p>
-              <div class="project-tech">
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">Algorithms</span>
-                <span class="tech-tag">Console App</span>
-              </div>
-              <div class="project-links">
-                <a href="https://github.com/deyanzcoding/Deyanz-Projects/tree/main/Cpp%20Projects/GPA%20Calculator" class="project-link link-github" target="_blank">GitHub: GPA Calculator</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-card fade-in">
-            <div class="project-image">👔</div>
-            <div class="project-content">
-              <h3 class="project-title">Tailor Management System</h3>
-              <p class="project-description">Complete business management solution for tailoring shops with customer management, order tracking, billing, and inventory control.</p>
-              <div class="project-tech">
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">OOP</span>
-                <span class="tech-tag">Database</span>
-              </div>
-              <div class="project-links"></div>
-                <a href="https://github.com/deyanzcoding/Deyanz-Projects/tree/main/Cpp%20Projects/Tailors%20Mangment%20System" class="project-link link-github" target="_blank">GitHub: Tailor Management</a>
-              </div>
-            </div>
-          </div>
-          <div class="project-card fade-in">
-            <div class="project-image">🎮</div>
-            <div class="project-content">
-              <h3 class="project-title">Number Guessing Game</h3>
-              <p class="project-description">Interactive console-based game with multiple difficulty levels, score tracking, and engaging user experience design.</p>
-              <div class="project-tech">
-                <span class="tech-tag">C++</span>
-                <span class="tech-tag">Game Logic</span>
-                <span class="tech-tag">Random Algorithms</span>
-              </div>
-              <div class="project-links">
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2 class="section-title fade-in">Let's Work Together</h2>
-        <p class="section-subtitle fade-in" style="color: #ddd;">Have a project in mind? Let's create something amazing!</p>
-        <div class="contact-content">
-          <!-- Contact Info Card -->
-          <div class="contact-info fade-in" style="background:rgba(255,255,255,0.08);border-radius:18px;padding:2.5rem 2rem 2rem 2rem;box-shadow:0 8px 32px rgba(44,62,80,0.08);">
-            <h3 style="font-size:2.1rem;margin-bottom:1.2rem;color:#fff;">Get In Touch</h3>
-            <p style="font-size:1.08rem;opacity:0.92;margin-bottom:2.2rem;">I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, I'll do my best to get back to you!</p>
-            <div class="contact-details" style="gap:1.2rem;">
-              <div class="contact-item" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1rem;">
-                <span class="contact-icon" style="font-size:1.6rem;">📧</span>
+        <title>Portfolio website complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
                 <div>
-                  <strong style="color:#fff;">Email</strong><br>
-                  <a href="mailto:deyanahmad@gmail.com" style="color:#e3f2fd;font-weight:500;">deyanahmad@gmail.com</a>
+                    <a href="#" class="nav__logo">Marlon</a>
                 </div>
-              </div>
-              <div class="contact-item" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1rem;">
-                <span class="contact-icon" style="font-size:1.6rem;">📍</span>
-                <div>
-                  <strong style="color:#fff;">Location</strong><br>
-                  <span style="color:#e3f2fd;">Mardan, KPK, Pakistan</span>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                        <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
                 </div>
-              </div>
-              <div class="contact-item" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1rem;">
-                <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="GitHub" style="width:22px; height:22px; vertical-align:middle; border-radius:3px;">
-                <div>
-                  <strong style="color:#fff;">GitHub</strong><br>
-                  <a href="https://github.com/deyanzcoding" target="_blank" style="color:#e3f2fd;font-weight:500;">deyanzcoding</a>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
                 </div>
-              </div>
-              <div class="contact-item" style="background:rgba(255,255,255,0.13);border-radius:12px;padding:1.1rem 1rem;">
-                <span class="contact-icon" style="font-size:1.6rem;">💼</span>
-                <div>
-                  <strong style="color:#fff;">LinkedIn</strong><br>
-                  <a href="https://linkedin.com/in/deyan-ahmad-bbffc329" target="_blank" style="color:#e3f2fd;font-weight:500;">Connect with me</a>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Marlon</span><br> Web Designer</h1>
+
+                    <a href="#" class="button">Contact</a>
                 </div>
-              </div>
+
+                <div class="home__social">
+                    <a href="" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="" class="home__social-icon"><i class='bx bxl-behance' ></i></a>
+                    <a href="" class="home__social-icon"><i class='bx bxl-github' ></i></a>
+                </div>
+
+                <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                            <image class="home__blob-img" x="50" y="60" href="assets/img/perfil.png"/>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="assets/img/about.jpg" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">I'am Marlon</h2>
+                        <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias accusamus atque.</p>           
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle">Profesional Skills</h2>
+                        <p class="skills__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit optio id vero amet, alias architecto consectetur error eum eaque sit.</p>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-html5 skills__icon'></i>
+                                <span class="skills__name">HTML5</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            <div>
+                                <span class="skills__percentage">95%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-css3 skills__icon'></i>
+                                <span class="skills__name">CSS3</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxl-javascript skills__icon' ></i>
+                                <span class="skills__name">JAVASCRIPT</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">65%</span>
+                            </div>
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <i class='bx bxs-paint skills__icon'></i>
+                                <span class="skills__name">UX/UI</span>
+                            </div>
+                            <div class="skills__bar skills__ux">
+                                
+                            </div>
+                            <div>
+                                <span class="skills__percentage">85%</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>              
+                        <img src="assets/img/work3.jpg" alt="" class="skills__img">
+                    </div>
+                </div>
+            </section>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+
+                <div class="work__container bd-grid">
+                    <a href="" class="work__img">
+                        <img src="assets/img/work1.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/work2.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/work3.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/work4.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/work5.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="assets/img/work6.jpg" alt="">
+                    </a>
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Contact</h2>
+
+                <div class="contact__container bd-grid">
+                    <form action="" class="contact__form">
+                        <input type="text" placeholder="Name" class="contact__input">
+                        <input type="mail" placeholder="Email" class="contact__input">
+                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
+                        <input type="button" value="Enviar" class="contact__button button">
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Marlon</p>
+            <div class="footer__social">
+                <a href="#" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="#" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
             </div>
-          </div>
-          <!-- Contact Form Card -->
-          <div class="contact-form fade-in" style="background:rgba(255,255,255,0.13);border-radius:18px;padding:2.5rem 2rem 2rem 2rem;box-shadow:0 8px 32px rgba(44,62,80,0.08);">
-            <form onsubmit="handleSubmit(event)">
-              <div class="form-group">
-                <label for="name" style="color:#fff;">Your Name</label>
-                <input type="text" placeholder="Enter your name" id="name" name="name" required style="background:rgba(255,255,255,0.93);">
-              </div>
-              <div class="form-group">
-                <label for="email" style="color:#fff;">Your Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required style="background:rgba(255,255,255,0.93);">
-              </div>
-              <div class="form-group">
-                <label for="subject" style="color:#fff;">Subject</label>
-                <input type="text" id="subject" placeholder="Title of your question" name="subject" required style="background:rgba(255,255,255,0.93);">
-              </div>
-              <div class="form-group">
-                <label for="message" style="color:#fff;">Your Message</label>
-                <textarea id="message" name="message" required placeholder="Tell me about your project..." style="background:rgba(255,255,255,0.93);"></textarea>
-              </div>
-              <button type="submit" class="form-btn" style="background:linear-gradient(90deg,#667eea,#764ba2);color:#fff;font-weight:700;box-shadow:0 4px 16px rgba(102,126,234,0.13);">Send Message</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+            <p class="footer__copy">&#169; Bedimcode. All rigths reserved</p>
+        </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Deyan Ahmad. All rights reserved. | Built with passion and code ❤️</p>
-        </div>
-    </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.15)';
-            } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
-            }
-        });
-
-        // Scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all elements with fade-in class
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Contact form handler
-        function handleSubmit(event) {
-            event.preventDefault();
-            
-            const formData = new FormData(event.target);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const subject = formData.get('subject');
-            const message = formData.get('message');
-            
-            // Create mailto link
-            const mailtoLink = `mailto:deyanahmad@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(
-                `Hello Deyan,\n\nMy name is ${name} and my email is ${email}.\n\n${message}\n\nBest regards,\n${name}`
-            )}`;
-            
-            // Open default email client
-            window.location.href = mailtoLink;
-            
-            // Show success message
-            alert('Thank you for your message! Your default email client should open now. If it doesn\'t, please send an email directly to deyanahmad@gmail.com');
-            
-            // Reset form
-            event.target.reset();
-        }
-
-        // Add typing effect to hero text
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Initialize typing effect when page loads
-        window.addEventListener('load', () => {
-            const heroTitle = document.querySelector('.hero-text h1');
-            const originalText = heroTitle.textContent;
-            setTimeout(() => {
-                typeWriter(heroTitle, originalText, 80);
-            }, 1000);
-        });
-
-        // Add interactive hover effects to project cards
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-15px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            const heroContent = document.querySelector('.hero-content');
-            
-            if (hero && heroContent && scrolled < hero.offsetHeight) {
-                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
-
-        // Add counter animation for stats
-        function animateCounter(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                const currentValue = Math.floor(progress * (end - start) + start);
-                element.textContent = currentValue + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        // Trigger counter animation when stats come into view
-        const statsObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    statNumbers.forEach((stat, index) => {
-                        const finalValue = parseInt(stat.textContent);
-                        setTimeout(() => {
-                            animateCounter(stat, 0, finalValue, 2000);
-                        }, index * 200);
-                    });
-                    statsObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.about-stats');
-        if (statsSection) {
-            statsObserver.observe(statsSection);
-        }
-
-        // Add dynamic gradient animation to hero background
-        let gradientAngle = 135;
-        setInterval(() => {
-            gradientAngle += 1;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.background = `linear-gradient(${gradientAngle}deg, #667eea 0%, #764ba2 100%)`;
-            }
-        }, 100);
-
-        // Animated particles background for hero section
-        function createParticles() {
-            const canvas = document.getElementById('particles-bg');
-            if (!canvas) return;
-            const ctx = canvas.getContext('2d');
-            let w = window.innerWidth;
-            let h = window.innerHeight;
-            canvas.width = w;
-            canvas.height = h;
-            let particles = [];
-            let num = Math.floor(w / 18);
-            for (let i = 0; i < num; i++) {
-                particles.push({
-                    x: Math.random() * w,
-                    y: Math.random() * h,
-                    r: Math.random() * 2.5 + 1.5,
-                    d: Math.random() * 1.5 + 0.5,
-                    alpha: Math.random() * 0.5 + 0.5
-                });
-            }
-            function draw() {
-                ctx.clearRect(0, 0, w, h);
-                for (let i = 0; i < particles.length; i++) {
-                    let p = particles[i];
-                    ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2, false);
-                    ctx.fillStyle = `rgba(255,255,255,${p.alpha})`;
-                    ctx.shadowColor = '#764ba2';
-                    ctx.shadowBlur = 8;
-                    ctx.fill();
-                }
-                move();
-            }
-            function move() {
-                for (let i = 0; i < particles.length; i++) {
-                    let p = particles[i];
-                    p.y += p.d;
-                    if (p.y > h) {
-                        p.y = 0;
-                        p.x = Math.random() * w;
-                    }
-                }
-            }
-            function animate() {
-                draw();
-                requestAnimationFrame(animate);
-            }
-            animate();
-            window.addEventListener('resize', () => {
-                w = window.innerWidth;
-                h = window.innerHeight;
-                canvas.width = w;
-                canvas.height = h;
-            });
-        }
-        window.addEventListener('DOMContentLoaded', createParticles);
-    </script>
-</body>
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
