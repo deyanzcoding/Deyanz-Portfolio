@@ -245,20 +245,20 @@
             // Project 1: Student Attendance Report
             [
             "assets/screenshots/awkum_lms/homeScreen-portrait.png",
+            "assets/screenshots/awkum_lms/slideDrawer-portrait.png",
             "assets/screenshots/awkum_lms/signUp-portrait.png",
             "assets/screenshots/awkum_lms/login-portrait.png",
             "assets/screenshots/awkum_lms/studentCard-portrait.png",
             "assets/screenshots/awkum_lms/hostelApply-portrait.png",
             "assets/screenshots/awkum_lms/transpostApply-portrait.png",
             "assets/screenshots/awkum_lms/feeHistory-portrait.png",
-            "assets/screenshots/awkum_lms/slideDrawer-portrait.png"
             ],
             // Project 2: Whatsapp UI Clone
             [
-            "assets/screenshots/whatsapp_clone/calls_tab-portrait.png",
-            "assets/screenshots/whatsapp_clone/chats_tab-portrait.png",
-            "assets/screenshots/whatsapp_clone/communities_tab-portrait.png",
-            "assets/screenshots/whatsapp_clone/status_tab-portrait.png"
+                "assets/screenshots/whatsapp_clone/chats_tab-portrait.png",
+                "assets/screenshots/whatsapp_clone/status_tab-portrait.png",
+                "assets/screenshots/whatsapp_clone/communities_tab-portrait.png",
+                "assets/screenshots/whatsapp_clone/calls_tab-portrait.png",
             ],
             // Project 3: Calculator App
             [
@@ -313,10 +313,14 @@
         }
 
         function toggleZoom() {
-            isZoomed = !isZoomed;
             const img = document.getElementById('modalImg');
-            img.style.transform = isZoomed ? 'scale(2)' : 'scale(1)';
-            img.style.cursor = isZoomed ? 'zoom-out' : 'zoom-in';
+            // Use an array of zoom levels
+            const zoomLevels = [1, 1.5, 2, 2.5];
+            // Store current zoom index on the image element
+            if (typeof img._zoomIdx === 'undefined') img._zoomIdx = 0;
+            img._zoomIdx = (img._zoomIdx + 1) % zoomLevels.length;
+            img.style.transform = `scale(${zoomLevels[img._zoomIdx]})`;
+            img.style.cursor = img._zoomIdx === 0 ? 'zoom-in' : 'zoom-out';
         }
 
         function updateModalImg() {
@@ -329,6 +333,74 @@
             document.getElementById('modalPrev').style.visibility = currentScreen > 0 ? 'visible' : 'hidden';
             document.getElementById('modalNext').style.visibility = currentScreen < projectScreens[currentProject].length - 1 ? 'visible' : 'hidden';
         }
+
+        let dragStart = null;
+        let imgStart = { x: 0, y: 0 };
+
+        // Enhanced image drag in zoom mode with bounds and smoothness
+        document.getElementById('modalImg').addEventListener('mousedown', function(e) {
+            const img = this;
+            if (img._zoomIdx && img._zoomIdx > 0) {
+            dragStart = { x: e.clientX, y: e.clientY };
+            // Extract translate values (allow negative/decimal)
+            const match = img.style.transform.match(/translate\((-?\d+(?:\.\d+)?)px,\s*(-?\d+(?:\.\d+)?)px\)/);
+            imgStart.x = match ? parseFloat(match[1]) : 0;
+            imgStart.y = match ? parseFloat(match[2]) : 0;
+            document.body.style.cursor = 'grabbing';
+            e.preventDefault();
+            }
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            const img = document.getElementById('modalImg');
+            if (dragStart && img._zoomIdx && img._zoomIdx > 0) {
+            let dx = e.clientX - dragStart.x;
+            let dy = e.clientY - dragStart.y;
+            let scale = [1, 1.5, 2, 2.5][img._zoomIdx];
+            // Calculate bounds
+            const modal = document.getElementById('workModal');
+            const modalRect = modal.getBoundingClientRect();
+            const imgRect = img.getBoundingClientRect();
+            const imgW = img.naturalWidth * scale;
+            const imgH = img.naturalHeight * scale;
+            const maxX = Math.max(0, (imgW - modalRect.width) / 2);
+            const maxY = Math.max(0, (imgH - modalRect.height) / 2);
+
+            let tx = imgStart.x + dx;
+            let ty = imgStart.y + dy;
+            // Clamp translate so image can't be dragged out of modal
+            tx = Math.max(-maxX, Math.min(maxX, tx));
+            ty = Math.max(-maxY, Math.min(maxY, ty));
+
+            img.style.transform = `scale(${scale}) translate(${tx}px, ${ty}px)`;
+            }
+        });
+
+        document.addEventListener('mouseup', function(e) {
+            if (dragStart) {
+            dragStart = null;
+            document.body.style.cursor = '';
+            }
+        });
+
+        // Reset translate on zoom out or image change
+        function resetImgTransform() {
+            const img = document.getElementById('modalImg');
+            img.style.transform = 'scale(1)';
+            imgStart = { x: 0, y: 0 };
+        }
+        const origToggleZoom = toggleZoom;
+        toggleZoom = function() {
+            const img = document.getElementById('modalImg');
+            const prevZoom = img._zoomIdx || 0;
+            origToggleZoom();
+            if ((img._zoomIdx || 0) === 0) {
+                resetImgTransform();
+            } else if (prevZoom === 0 && img._zoomIdx > 0) {
+                img.style.transform = `scale(${[1, 1.5, 2, 2.5][img._zoomIdx]}) translate(0px,0px)`;
+                imgStart = { x: 0, y: 0 };
+            }
+        };
 
         document.getElementById('modalPrev').onclick = function(e) {
             if (currentScreen > 0) {
