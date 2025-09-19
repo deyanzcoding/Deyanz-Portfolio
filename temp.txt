@@ -1,4 +1,171 @@
-    <!--===== WORK =====-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- =====BOX ICONS===== -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <title>Portfolio website complete</title>
+</head>
+
+<body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+        <nav class="nav bd-grid">
+            <div>
+                <a href="#home" class="nav__logo">Deyan</a>
+            </div>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                    <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="nav__toggle" id="nav-toggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="l-main">
+        <!--===== HOME =====-->
+        <section class="home bd-grid" id="home">
+
+            <div class="home__data">
+                <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Deyan</span><br> Flutter Developer.
+                </h1>
+
+                <a href="#contact" class="button">Contact with me</a>
+            </div>
+
+            <div class="home__social">
+               
+                <a href="https://www.tiktok.com/@deyanz.coding?lang=en" target="_blank"
+                    class="home__social-icon"><i class='bx bxl-tiktok'></i></a>
+                <a href="https://www.linkedin.com/in/deyan-ahmad-b11163219/" target="_blank"
+                    class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                <a href="https://github.com/deyanzcoding" target="_blank" class="home__social-icon"><i
+                        class='bx bxl-github'></i></a>
+            </div>
+
+            <div class="home__img">
+                <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <mask id="mask0" mask-type="alpha">
+                        <path
+                            d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+                    </mask>
+                    <g mask="url(#mask0)">
+                        <path
+                            d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z" />
+                        <image class="home__blob-img" x="50" y="40" href="assets/img/perfil.png" />
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!--===== ABOUT =====-->
+        <section class="about section " id="about">
+            <h2 class="section-title">About</h2>
+
+            <div class="about__container bd-grid">
+                <div class="about__img">
+                    <img src="assets/img/about.jpg" alt="deyan_pic">
+                </div>
+
+                <div>
+                    <h2 class="about__subtitle">I'am Deyan</h2>
+                    <p class="about__text">I'm a dedicated Flutter and Dart Developer currently pursuing my Bachelor's
+                        degree at <b>Abdul Wali Khan University.</b> My journey in programming started with C++ and
+                        Java, but I found my passion in mobile app development with Flutter. <br><br>I believe in
+                        writing clean, efficient code and creating user experiences that make a difference. Whether it's
+                        a complex Learning Management System or a simple utility app, I approach every project with
+                        creativity, precision, and a commitment to excellence.</p>
+                </div>
+            </div>
+        </section>
+
+        <!--===== SKILLS =====-->
+        <section class="skills section" id="skills">
+            <h2 class="section-title">Skills</h2>
+
+            <div class="skills__container bd-grid">
+                <div>
+                    <h2 class="skills__subtitle">Profesional Skills</h2>
+                    <p class="skills__text">I began my programming journey with C/C++ and Java, building a strong
+                        foundation in problem-solving. Later, I explored web development to expand my skills in creating
+                        interactive applications. My passion for mobile apps led me to Flutter and Dart, where I now
+                        focus on crafting modern, cross-platform solutions.</p>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                        <i class='bx bxl-flutter skills__icon'></i>
+
+                            <span class="skills__name">Flutter & Dart</span>
+                        </div>
+                        <div class="skills__bar skills__html">
+
+                        </div>
+                        <div>
+                            <span class="skills__percentage">95%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-css3 skills__icon'></i>
+                            <span class="skills__name">Web Development</span>
+                        </div>
+                        <div class="skills__bar skills__css">
+
+                        </div>
+                        <div>
+                            <span class="skills__percentage">85%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-java skills__icon'></i>
+                            <span class="skills__name">Java</span>
+                        </div>
+                        <div class="skills__bar skills__js">
+
+                        </div>
+                        <div>
+                            <span class="skills__percentage">65%</span>
+                        </div>
+                    </div>
+                    <div class="skills__data">
+                        <div class="skills__names">
+                            <i class='bx bxl-c-plus-plus skills__icon'></i>
+                            <span class="skills__name">C/C++</span>
+                        </div>
+                        <div class="skills__bar skills__ux">
+
+                        </div>
+                        <div>
+                            <span class="skills__percentage">85%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="assets/img/work3.jpg" alt="" class="skills__img">
+                </div>
+            </div>
+        </section>
+
+<!--===== WORK =====-->
         <section class="work section" id="work">
             <h2 class="section-title">Work</h2>
 
@@ -15,8 +182,8 @@
             </div>
             <!-- Project 2 -->
             <div class="work__item">
-                <a href="assets/screenshots/whatsapp_clone/calls_tab-portrait.png" class="work__img" onclick="openModal(event, 1, 0)">
-                <img src="assets/screenshots/whatsapp_clone/calls_tab-portrait.png" alt="Whatsapp UI Clone">
+                <a href="assets/screenshots/whatsapp_clone/chats_tab-portrait.png" class="work__img" onclick="openModal(event, 1, 0)">
+                <img src="assets/screenshots/whatsapp_clone/chats_tab-portrait.png" alt="Whatsapp UI Clone">
                 </a>
                 <div class="work__info">
                 <p class="work__project-name">Whatsapp UI Clone</p>
@@ -65,12 +232,12 @@
             </div>
             </div>
 
-            <!-- Modal for image preview with arrows -->
+            <!-- Modal for image preview with zoom and arrows -->
             <div id="workModal" class="work__modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
-            <span style="position:absolute;top:30px;right:40px;font-size:40px;color:#fff;cursor:pointer;" onclick="closeModal()">&times;</span>
-            <span id="modalPrev" style="position:absolute;left:30px;top:50%;transform:translateY(-50%);font-size:60px;color:#fff;cursor:pointer;user-select:none;">&#8592;</span>
-            <img id="modalImg" src="" alt="Project Preview" style="max-width:90vw; max-height:80vh; display:block; margin:auto; border-radius:10px;">
-            <span id="modalNext" style="position:absolute;right:30px;top:50%;transform:translateY(-50%);font-size:60px;color:#fff;cursor:pointer;user-select:none;">&#8594;</span>
+                <span style="position:absolute; top:30px; right:40px; font-size:40px; color:#fff; cursor:pointer;" onclick="closeModal()">&times;</span>
+                <span id="modalPrev" style="position:absolute; left:30px; top:50%; transform:translateY(-50%); font-size:60px; color:#fff; cursor:pointer; user-select:none;">&#8592;</span>
+                <img id="modalImg" src="" alt="Project Preview" style="max-width:90vw; max-height:80vh; display:block; margin:auto; border-radius:10px; cursor:zoom-in; transition: transform 0.2s;" onclick="toggleZoom()">
+                <span id="modalNext" style="position:absolute; right:30px; top:50%; transform:translateY(-50%); font-size:60px; color:#fff; cursor:pointer; user-select:none;">&#8594;</span>
             </div>
         </section>
 
@@ -128,6 +295,7 @@
 
         let currentProject = 0;
         let currentScreen = 0;
+        let isZoomed = false;
 
         function openModal(event, projectIdx, screenIdx) {
             event.preventDefault();
@@ -135,20 +303,106 @@
             currentScreen = screenIdx;
             updateModalImg();
             document.getElementById('workModal').style.display = 'flex';
+            isZoomed = false;
         }
-
+        
         function closeModal() {
             document.getElementById('workModal').style.display = 'none';
             document.getElementById('modalImg').src = '';
+            isZoomed = false;
+            document.getElementById('modalImg').style.transform = 'scale(1)';
         }
+
+        function toggleZoom() {
+            const img = document.getElementById('modalImg');
+            // Use an array of zoom levels
+            const zoomLevels = [1, 1.3, 2, 2.5];
+            // Store current zoom index on the image element
+            if (typeof img._zoomIdx === 'undefined') img._zoomIdx = 0;
+            img._zoomIdx = (img._zoomIdx + 1) % zoomLevels.length;
+            img.style.transform = `scale(${zoomLevels[img._zoomIdx]})`;
+            img.style.cursor = img._zoomIdx === 0 ? 'zoom-in' : 'zoom-out';
+        }
+
 
         function updateModalImg() {
             const img = document.getElementById('modalImg');
             img.src = projectScreens[currentProject][currentScreen];
+            img.style.transform = 'scale(1)'; // Reset zoom on image change
+            isZoomed = false;
+            img.style.cursor = 'zoom-in';
             // Hide prev/next if at ends
             document.getElementById('modalPrev').style.visibility = currentScreen > 0 ? 'visible' : 'hidden';
             document.getElementById('modalNext').style.visibility = currentScreen < projectScreens[currentProject].length - 1 ? 'visible' : 'hidden';
         }
+
+        let dragStart = null;
+        let imgStart = { x: 0, y: 0 };
+
+        // Enhanced image drag in zoom mode with bounds and smoothness
+        document.getElementById('modalImg').addEventListener('mousedown', function(e) {
+            const img = this;
+            if (img._zoomIdx && img._zoomIdx > 0) {
+            dragStart = { x: e.clientX, y: e.clientY };
+            // Extract translate values (allow negative/decimal)
+            const match = img.style.transform.match(/translate\((-?\d+(?:\.\d+)?)px,\s*(-?\d+(?:\.\d+)?)px\)/);
+            imgStart.x = match ? parseFloat(match[1]) : 0;
+            imgStart.y = match ? parseFloat(match[2]) : 0;
+            document.body.style.cursor = 'grabbing';
+            e.preventDefault();
+            }
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            const img = document.getElementById('modalImg');
+            if (dragStart && img._zoomIdx && img._zoomIdx > 0) {
+            let dx = e.clientX - dragStart.x;
+            let dy = e.clientY - dragStart.y;
+            let scale = [1, 1.3, 2, 2.5][img._zoomIdx];
+            // Calculate bounds
+            const modal = document.getElementById('workModal');
+            const modalRect = modal.getBoundingClientRect();
+            const imgRect = img.getBoundingClientRect();
+            const imgW = img.naturalWidth * scale;
+            const imgH = img.naturalHeight * scale;
+            const maxX = Math.max(0, (imgW - modalRect.width) / 2);
+            const maxY = Math.max(0, (imgH - modalRect.height) / 2);
+
+            let tx = imgStart.x + dx;
+            let ty = imgStart.y + dy;
+            // Clamp translate so image can't be dragged out of modal
+            tx = Math.max(-maxX, Math.min(maxX, tx));
+            ty = Math.max(-maxY, Math.min(maxY, ty));
+
+            img.style.transform = `scale(${scale}) translate(${tx}px, ${ty}px)`;
+            }
+        });
+
+        document.addEventListener('mouseup', function(e) {
+            if (dragStart) {
+            dragStart = null;
+            document.body.style.cursor = '';
+            }
+        });
+
+        // Reset translate on zoom out or image change
+        function resetImgTransform() {
+            const img = document.getElementById('modalImg');
+            img.style.transform = 'scale(1)';
+            imgStart = { x: 0, y: 0 };
+        }
+        const origToggleZoom = toggleZoom;
+        toggleZoom = function() {
+            const img = document.getElementById('modalImg');
+            const prevZoom = img._zoomIdx || 0;
+            origToggleZoom();
+            if ((img._zoomIdx || 0) === 0) {
+                resetImgTransform();
+            } else if (prevZoom === 0 && img._zoomIdx > 0) {
+                img.style.transform = `scale(${[1, 1.3, 2, 2.5][img._zoomIdx]}) translate(0px,0px)`;
+                imgStart = { x: 0, y: 0 };
+            }
+        };
 
         document.getElementById('modalPrev').onclick = function(e) {
             if (currentScreen > 0) {
@@ -173,6 +427,7 @@
                 updateModalImg();
             }
             if (e.key === 'Escape') closeModal();
+            if (e.key === 'z' || e.key === 'Z') toggleZoom(); // 'z' or 'Z' to toggle zoom
             }
         });
         document.getElementById('workModal').addEventListener('click', function(e) {
@@ -225,3 +480,169 @@
             }
         }
         </style>
+
+
+<style>
+.work__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+.work__item {
+    flex: 1 1 250px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.work__item.hidden {
+    display: none; /* Hides additional projects initially */
+}
+.work__img img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.work__img img:hover {
+    transform: scale(1.05);
+}
+.work__info {
+    margin-top: 0.7rem;
+    text-align: center;
+}
+.work__project-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.work__button {
+    margin-top: 0.3rem;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.95rem;
+}
+@media (max-width: 900px) {
+    .work__container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .work__item {
+        max-width: 90vw;
+    }
+}
+</style>
+
+
+        <!-- Contact Section -->
+         <section class="contact section" id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact__container bd-grid">
+    <form id="contact-form" action="https://formsubmit.co/deyanzcoding@gmail.com" method="POST" class="contact__form">
+      
+      <!-- Name -->
+      <input type="text" name="name" placeholder="Name" class="contact__input" required>
+      
+      <!-- Email -->
+      <input type="email" name="email" placeholder="Email" class="contact__input" required>
+      
+      <!-- Message -->
+      <textarea name="message" placeholder="Enter your message here..." class="contact__input" rows="10" required></textarea>
+      
+      <!-- Submit Button -->
+      <button type="submit" class="contact__button button">Send</button>
+
+      <!-- Hidden settings -->
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+
+   <!-- Success Message -->
+<p id="success-message" 
+   style="display:none; 
+          background: linear-gradient(135deg, #d4edda, #c3e6cb);
+          color: #155724; 
+          border-left: 6px solid #28a745; 
+          padding: 15px 20px; 
+          border-radius: 6px; 
+          margin-top: 20px; 
+          font-weight: 500; 
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          text-align: left; 
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          transition: opacity 0.5s ease;">
+</p>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-message');
+
+  // Array of romantic success messages
+  const romanticMessages = [
+    "💌 Your words reached me like a secret love letter. 🌹",
+    "🌙 Your message arrived softly, like moonlight touching my heart.",
+    "❤️ Message delivered — and my inbox is smiling because of you.",
+    "✨ Your words fluttered in like a butterfly carrying whispers of love.",
+    "🔥 Your message sparked a little fire in my soul.",
+    "🌹 Your message has reached my heart. Thank you for writing to me.",
+    "💕 Thank you, my dear. Your message feels like a gentle embrace.",
+    "🎉 Thanks, your message has been sent! I\'ll get back to you as soon as possible."
+  ];
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // stop default form submission
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData
+    }).then(response => {
+      if (response.ok) {
+        // Pick a random romantic message
+        const randomMsg = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
+        successMsg.textContent = randomMsg;
+
+        // Show the message
+        successMsg.style.display = "block";
+
+        // Clear form fields
+        form.reset();
+
+        // Hide message after 3 sec
+        setTimeout(() => {
+          successMsg.style.display = "none";
+        }, 5000);
+      } else {
+        alert("❌ Something went wrong, please try again.");
+      }
+    }).catch(error => alert("❌ Error: " + error));
+  });
+</script>
+
+
+
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+        <p class="footer__title">I am waiting for you ..</p>
+        <div class="footer__social">
+            <a href="https://www.linkedin.com/in/deyan-ahmad-b11163219/" target="_blank" class="footer__icon"><i
+                    class='bx bxl-linkedin'></i></a>
+            <a href="https://www.github.com/deyanzcoding" target="_blank" class="footer__icon"><i
+                    class='bx bxl-github'></i></a>
+            <a href="https://www.tiktok.com/@deyanz.coding?lang=en" target="_blank" class="footer__icon"><i
+                    class='bx bxl-tiktok'></i></a>
+    
+                </div>
+        <p class="footer__copy">&#169; deyanzcoding. All rigths reserved</p>
+    </footer>
+
+
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
