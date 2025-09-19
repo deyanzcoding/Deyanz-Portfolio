@@ -20,7 +20,7 @@
     <header class="l-header">
         <nav class="nav bd-grid">
             <div>
-                <a href="#" class="nav__logo">Deyan</a>
+                <a href="#home" class="nav__logo">Deyan</a>
             </div>
 
             <div class="nav__menu" id="nav-menu">
@@ -42,6 +42,7 @@
     <main class="l-main">
         <!--===== HOME =====-->
         <section class="home bd-grid" id="home">
+
             <div class="home__data">
                 <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Deyan</span><br> Flutter Developer.
                 </h1>
@@ -164,362 +165,322 @@
             </div>
         </section>
 
-<!--===== FLUTTER PROJECTS =====-->
-<section class="work section" id="flutter-projects">
-    <h2 class="section-title">Flutter Projects</h2>
+<!--===== WORK =====-->
+        <section class="work section" id="work">
+            <h2 class="section-title">Work</h2>
 
-    <div class="work__container bd-grid">
-        <!-- Project 1 -->
-        <div class="work__item">
-            <a href="assets/screenshots/awkum_lms/homeScreen-portrait.png" class="work__img" onclick="openModal(event, 0, 0, 'flutter')">
+            <div class="work__container bd-grid">
+            <!-- Project 1 -->
+            <div class="work__item">
+                <a href="assets/screenshots/awkum_lms/homeScreen-portrait.png" class="work__img" onclick="openModal(event, 0, 0)">
                 <img src="assets/screenshots/awkum_lms/homeScreen-portrait.png" alt="Student Attendance Report">
-            </a>
-            <div class="work__info">
+                </a>
+                <div class="work__info">
                 <p class="work__project-name">Student Attendance Report</p>
                 <a href="https://github.com/deyanzcoding/DeyanzFlutter/tree/main/login_page" target="_blank" class="button work__button">View GitHub</a>
+                </div>
             </div>
-        </div>
-        <!-- Project 2 -->
-        <div class="work__item">
-            <a href="assets/screenshots/whatsapp_clone/chats_tab-portrait.png" class="work__img" onclick="openModal(event, 1, 0, 'flutter')">
+            <!-- Project 2 -->
+            <div class="work__item">
+                <a href="assets/screenshots/whatsapp_clone/chats_tab-portrait.png" class="work__img" onclick="openModal(event, 1, 0)">
                 <img src="assets/screenshots/whatsapp_clone/chats_tab-portrait.png" alt="Whatsapp UI Clone">
-            </a>
-            <div class="work__info">
+                </a>
+                <div class="work__info">
                 <p class="work__project-name">Whatsapp UI Clone</p>
                 <a href="https://github.com/deyanzcoding/Whatsapp-Clone" target="_blank" class="button work__button">View GitHub</a>
+                </div>
             </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="work__item">
-            <a href="assets/screenshots/calculator/calculator1.png" class="work__img" onclick="openModal(event, 2, 0, 'flutter')">
+            <!-- Project 3 -->
+            <div class="work__item">
+                <a href="assets/screenshots/calculator/calculator1.png" class="work__img" onclick="openModal(event, 2, 0)">
                 <img src="assets/screenshots/calculator/calculator1.png" alt="Calculator App">
-            </a>
-            <div class="work__info">
+                </a>
+                <div class="work__info">
                 <p class="work__project-name">Calculator App</p>
                 <a href="https://github.com/deyanzcoding/DeyanzFlutter/tree/main/calculator_app" target="_blank" class="button work__button">View GitHub</a>
+                </div>
             </div>
-        </div>
-        <!-- Project 3 -->
-        <div class="work__item">
-            <a href="assets/screenshots/calculator/calculator1.png" class="work__img" onclick="openModal(event, 2, 0, 'flutter')">
-                <img src="assets/screenshots/calculator/calculator1.png" alt="Calculator App">
-            </a>
-            <div class="work__info">
-                <p class="work__project-name">Calculator App</p>
-                <a href="https://github.com/deyanzcoding/DeyanzFlutter/tree/main/calculator_app" target="_blank" class="button work__button">View GitHub</a>
-            </div>
-        </div>
-        <!-- Hidden additional Flutter projects (if >3, show via button) -->
-        <!-- Example: <div class="work__item hidden">... </div> -->
-    </div>
-    <!-- Show More button for Flutter (hidden if <=3 projects) -->
-    <button id="flutterShowMore" class="button" style="display:none; margin: 2rem auto; padding: 0.75rem 2rem;" onclick="toggleProjects('flutter')">
-        Show More
-    </button>
-</section>
-
-<!--===== C++ PROJECTS =====-->
-<section class="work section" id="cpp-projects">
-    <h2 class="section-title">C++ Projects</h2>
-
-    <div class="work__container bd-grid">
-        <!-- Project 1 (C++) -->
-        <div class="work__item">
-            <a href="assets/screenshots/Student_Attendence_System/main.png" class="work__img" onclick="openModal(event, 0, 0, 'cpp')">
+            <!-- Project 4 -->
+            <div class="work__item">
+                <a href="assets/screenshots/Student_Attendence_System/main.png" class="work__img" onclick="openModal(event, 3, 0)">
                 <img src="assets/screenshots/Student_Attendence_System/main.png" alt="Student Attendance System">
-            </a>
-            <div class="work__info">
+                </a>
+                <div class="work__info">
                 <p class="work__project-name">Student Attendance System</p>
                 <a href="https://github.com/deyanzcoding/Deyanz-Projects/tree/main/Cpp%20Projects/Student_Attendence_Report" target="_blank" class="button work__button">View GitHub</a>
+                </div>
             </div>
-        </div>
-        <!-- Project 2 (C++) -->
-        <div class="work__item">
-            <a href="assets/screenshots/tailer_management_system/tailer management system (1)-front.png" class="work__img" onclick="openModal(event, 1, 0, 'cpp')">
+            <!-- Project 5 -->
+            <div class="work__item">
+                <a href="assets/screenshots/tailer_management_system/tailer management system (1)-front.png" class="work__img" onclick="openModal(event, 4, 0)">
                 <img src="assets/screenshots/tailer_management_system/tailer management system (1)-front.png" alt="Tailer Management System">
-            </a>
-            <div class="work__info">
+                </a>
+                <div class="work__info">
                 <p class="work__project-name">Tailer Management System</p>
                 <a href="https://github.com/deyanzcoding/Deyanz-Projects/tree/main/Cpp%20Projects/Tailors%20Mangment%20System" target="_blank" class="button work__button">View GitHub</a>
+                </div>
             </div>
-        </div>
-        <!-- Project 3 (C++) -->
-        <div class="work__item">
-            <a href="assets/screenshots/gpa_calculator/gpa calculator (1)-front.png" class="work__img" onclick="openModal(event, 2, 0, 'cpp')">
+            <!-- Project 6 -->
+            <div class="work__item">
+                <a href="assets/screenshots/gpa_calculator/gpa calculator (1)-front.png" class="work__img" onclick="openModal(event, 5, 0)">
                 <img src="assets/screenshots/gpa_calculator/gpa calculator (1)-front.png" alt="GPA Calculator">
-            </a>
-            <div class="work__info">
+                </a>
+                <div class="work__info">
                 <p class="work__project-name">GPA Calculator</p>
                 <a href="https://github.com/deyanzcoding/Deyanz-Projects/tree/main/Cpp%20Projects/GPA%20Calculator" target="_blank" class="button work__button">View GitHub</a>
+                </div>
             </div>
-        </div>
-        <!-- Hidden additional C++ projects (if >3, show via button) -->
-        <!-- Example: <div class="work__item hidden">... </div> -->
-    </div>
-    <!-- Show More button for C++ (hidden if <=3 projects) -->
-    <button id="cppShowMore" class="button" style="display:none; margin: 2rem auto; padding: 0.75rem 2rem;" onclick="toggleProjects('cpp')">
-        Show More
-    </button>
-</section>
+            </div>
 
-<!-- Modal for image preview with zoom and arrows -->
-<div id="workModal" class="work__modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
-    <span style="position:absolute; top:30px; right:40px; font-size:40px; color:#fff; cursor:pointer;" onclick="closeModal()">&times;</span>
-    <span id="modalPrev" style="position:absolute; left:30px; top:50%; transform:translateY(-50%); font-size:60px; color:#fff; cursor:pointer; user-select:none;">&#8592;</span>
-    <img id="modalImg" src="" alt="Project Preview" style="max-width:90vw; max-height:80vh; display:block; margin:auto; border-radius:10px; cursor:zoom-in; transition: transform 0.2s;" onclick="toggleZoom()">
-    <span id="modalNext" style="position:absolute; right:30px; top:50%; transform:translateY(-50%); font-size:60px; color:#fff; cursor:pointer; user-select:none;">&#8594;</span>
-</div>
+            <!-- Modal for image preview with zoom and arrows -->
+            <div id="workModal" class="work__modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
+                <span style="position:absolute; top:30px; right:40px; font-size:40px; color:#fff; cursor:pointer;" onclick="closeModal()">&times;</span>
+                <span id="modalPrev" style="position:absolute; left:30px; top:50%; transform:translateY(-50%); font-size:60px; color:#fff; cursor:pointer; user-select:none;">&#8592;</span>
+                <img id="modalImg" src="" alt="Project Preview" style="max-width:90vw; max-height:80vh; display:block; margin:auto; border-radius:10px; cursor:zoom-in; transition: transform 0.2s;" onclick="toggleZoom()">
+                <span id="modalNext" style="position:absolute; right:30px; top:50%; transform:translateY(-50%); font-size:60px; color:#fff; cursor:pointer; user-select:none;">&#8594;</span>
+            </div>
+        </section>
 
-<script>
-// Separate arrays for Flutter and C++ projects
-const flutterScreens = [
-    // Flutter Project 1: Student Attendance Report
-    [
-        "assets/screenshots/awkum_lms/homeScreen-portrait.png",
-        "assets/screenshots/awkum_lms/slideDrawer-portrait.png",
-        "assets/screenshots/awkum_lms/signUp-portrait.png",
-        "assets/screenshots/awkum_lms/login-portrait.png",
-        "assets/screenshots/awkum_lms/studentCard-portrait.png",
-        "assets/screenshots/awkum_lms/hostelApply-portrait.png",
-        "assets/screenshots/awkum_lms/transpostApply-portrait.png",
-        "assets/screenshots/awkum_lms/feeHistory-portrait.png",
-    ],
-    // Flutter Project 2: Whatsapp UI Clone
-    [
-        "assets/screenshots/whatsapp_clone/chats_tab-portrait.png",
-        "assets/screenshots/whatsapp_clone/status_tab-portrait.png",
-        "assets/screenshots/whatsapp_clone/communities_tab-portrait.png",
-        "assets/screenshots/whatsapp_clone/calls_tab-portrait.png",
-    ],
-    // Flutter Project 3: Calculator App
-    [
-        "assets/screenshots/calculator/calculator1.png",
-        "assets/screenshots/calculator/calculator2.png",
-        "assets/screenshots/calculator/calculator3.png"
-    ]
-    // Add more Flutter projects here if needed
-];
+        <script>
+        const projectScreens = [
+            // Project 1: Student Attendance Report
+            [
+            "assets/screenshots/awkum_lms/homeScreen-portrait.png",
+            "assets/screenshots/awkum_lms/slideDrawer-portrait.png",
+            "assets/screenshots/awkum_lms/signUp-portrait.png",
+            "assets/screenshots/awkum_lms/login-portrait.png",
+            "assets/screenshots/awkum_lms/studentCard-portrait.png",
+            "assets/screenshots/awkum_lms/hostelApply-portrait.png",
+            "assets/screenshots/awkum_lms/transpostApply-portrait.png",
+            "assets/screenshots/awkum_lms/feeHistory-portrait.png",
+            ],
+            // Project 2: Whatsapp UI Clone
+            [
+                "assets/screenshots/whatsapp_clone/chats_tab-portrait.png",
+                "assets/screenshots/whatsapp_clone/status_tab-portrait.png",
+                "assets/screenshots/whatsapp_clone/communities_tab-portrait.png",
+                "assets/screenshots/whatsapp_clone/calls_tab-portrait.png",
+            ],
+            // Project 3: Calculator App
+            [
+            "assets/screenshots/calculator/calculator1.png",
+            "assets/screenshots/calculator/calculator2.png",
+            "assets/screenshots/calculator/calculator3.png"
+            ],
+            // Project 4: Student Attendance System
+            [
+            "assets/screenshots/Student_Attendence_System/main.png",
+            "assets/screenshots/Student_Attendence_System/takeAtten.png",
+            "assets/screenshots/Student_Attendence_System/attenSuccess.png",
+            "assets/screenshots/Student_Attendence_System/searchStu.png",
+            "assets/screenshots/Student_Attendence_System/attenReport.png",
+            "assets/screenshots/Student_Attendence_System/attenReportInTwoWay.png"
+            ],
+            // Project 5: Tailer Management System
+            [
+            "assets/screenshots/tailer_management_system/tailer management system (1)-front.png",
+            "assets/screenshots/tailer_management_system/tailer management system (2)-front.png",
+            "assets/screenshots/tailer_management_system/tailer management system (3)-front.png",
+            "assets/screenshots/tailer_management_system/tailer management system (4)-front.png",
+            "assets/screenshots/tailer_management_system/tailer management system (5)-front.png",
+            "assets/screenshots/tailer_management_system/tailer management system (6)-front.png"
+            ],
+            // Project 6: GPA Calculator
+            [
+            "assets/screenshots/gpa_calculator/gpa calculator (1)-front.png",
+            "assets/screenshots/gpa_calculator/gpa calculator (2)-front.png",
+            "assets/screenshots/gpa_calculator/gpa calculator (3)-front.png"
+            ]
+        ];
 
-const cppScreens = [
-    // C++ Project 1: Student Attendance System
-    [
-        "assets/screenshots/Student_Attendence_System/main.png",
-        "assets/screenshots/Student_Attendence_System/takeAtten.png",
-        "assets/screenshots/Student_Attendence_System/attenSuccess.png",
-        "assets/screenshots/Student_Attendence_System/searchStu.png",
-        "assets/screenshots/Student_Attendence_System/attenReport.png",
-        "assets/screenshots/Student_Attendence_System/attenReportInTwoWay.png"
-    ],
-    // C++ Project 2: Tailer Management System
-    [
-        "assets/screenshots/tailer_management_system/tailer management system (1)-front.png",
-        "assets/screenshots/tailer_management_system/tailer management system (2)-front.png",
-        "assets/screenshots/tailer_management_system/tailer management system (3)-front.png",
-        "assets/screenshots/tailer_management_system/tailer management system (4)-front.png",
-        "assets/screenshots/tailer_management_system/tailer management system (5)-front.png",
-        "assets/screenshots/tailer_management_system/tailer management system (6)-front.png"
-    ],
-    // C++ Project 3: GPA Calculator
-    [
-        "assets/screenshots/gpa_calculator/gpa calculator (1)-front.png",
-        "assets/screenshots/gpa_calculator/gpa calculator (2)-front.png",
-        "assets/screenshots/gpa_calculator/gpa calculator (3)-front.png"
-    ]
-    // Add more C++ projects here if needed
-];
+        let currentProject = 0;
+        let currentScreen = 0;
+        let isZoomed = false;
 
-let currentProject = 0;
-let currentScreen = 0;
-let isZoomed = false;
-let currentType = ''; // 'flutter' or 'cpp' to determine which array to use
-
-function openModal(event, projectIdx, screenIdx, type) {
-    event.preventDefault();
-    currentProject = projectIdx;
-    currentScreen = screenIdx;
-    currentType = type;
-    // Set default zoom based on project type
-    const defaultZoom = type === 'flutter' ? 1.3 : 2;
-    document.getElementById('modalImg').style.transform = `scale(${defaultZoom})`;
-    isZoomed = true; // Mark as zoomed since default is >1
-    updateModalImg();
-    document.getElementById('workModal').style.display = 'flex';
-}
-
-function closeModal() {
-    document.getElementById('workModal').style.display = 'none';
-    document.getElementById('modalImg').src = '';
-    isZoomed = false;
-    document.getElementById('modalImg').style.transform = 'scale(1)';
-}
-
-function toggleZoom() {
-    const img = document.getElementById('modalImg');
-    // Use an array of zoom levels starting from default based on type
-    const zoomLevels = currentType === 'flutter' ? [1.3, 1.6, 2, 2.5] : [2, 2.3, 2.5, 3];
-    // Store current zoom index on the image element
-    if (typeof img._zoomIdx === 'undefined') img._zoomIdx = 0;
-    img._zoomIdx = (img._zoomIdx + 1) % zoomLevels.length;
-    img.style.transform = `scale(${zoomLevels[img._zoomIdx]})`;
-    img.style.cursor = img._zoomIdx === 0 ? 'zoom-in' : 'zoom-out';
-}
-
-function updateModalImg() {
-    const screens = currentType === 'flutter' ? flutterScreens : cppScreens;
-    const img = document.getElementById('modalImg');
-    img.src = screens[currentProject][currentScreen];
-    // Apply default zoom for the type (overrides any previous)
-    const defaultZoom = currentType === 'flutter' ? 1.3 : 2;
-    img.style.transform = `scale(${defaultZoom})`;
-    isZoomed = true;
-    img.style.cursor = 'zoom-out'; // Since default is zoomed
-    // Hide prev/next if at ends
-    document.getElementById('modalPrev').style.visibility = currentScreen > 0 ? 'visible' : 'hidden';
-    document.getElementById('modalNext').style.visibility = currentScreen < screens[currentProject].length - 1 ? 'visible' : 'hidden';
-}
-
-// Function to toggle show more/hide for a section
-function toggleProjects(type) {
-    const container = document.getElementById(type === 'flutter' ? 'flutter-projects' : 'cpp-projects').querySelector('.work__container');
-    const hiddenItems = container.querySelectorAll('.work__item.hidden');
-    const button = document.getElementById(type === 'flutter' ? 'flutterShowMore' : 'cppShowMore');
-    
-    if (hiddenItems.length > 0) {
-        // Show hidden items
-        hiddenItems.forEach(item => item.classList.remove('hidden'));
-        button.textContent = 'Show Less';
-    } else {
-        // Hide extra items (keep first 3 visible)
-        const items = container.querySelectorAll('.work__item');
-        for (let i = 3; i < items.length; i++) {
-            items[i].classList.add('hidden');
+        function openModal(event, projectIdx, screenIdx) {
+            event.preventDefault();
+            currentProject = projectIdx;
+            currentScreen = screenIdx;
+            updateModalImg();
+            document.getElementById('workModal').style.display = 'flex';
+            isZoomed = false;
         }
-        button.textContent = 'Show More';
-    }
-}
-
-// Initialize show more buttons if needed (check if >3 projects per section)
-document.addEventListener('DOMContentLoaded', function() {
-    // For Flutter: Check if more than 3 projects
-    const flutterContainer = document.getElementById('flutter-projects').querySelector('.work__container');
-    if (flutterContainer.children.length > 3) {
-        document.getElementById('flutterShowMore').style.display = 'block';
-        // Hide extra items initially
-        for (let i = 3; i < flutterContainer.children.length; i++) {
-            flutterContainer.children[i].classList.add('hidden');
+        
+        function closeModal() {
+            document.getElementById('workModal').style.display = 'none';
+            document.getElementById('modalImg').src = '';
+            isZoomed = false;
+            document.getElementById('modalImg').style.transform = 'scale(1)';
         }
-    }
 
-    // For C++: Check if more than 3 projects
-    const cppContainer = document.getElementById('cpp-projects').querySelector('.work__container');
-    if (cppContainer.children.length > 3) {
-        document.getElementById('cppShowMore').style.display = 'block';
-        // Hide extra items initially
-        for (let i = 3; i < cppContainer.children.length; i++) {
-            cppContainer.children[i].classList.add('hidden');
+        function toggleZoom() {
+            const img = document.getElementById('modalImg');
+            // Use an array of zoom levels
+            const zoomLevels = [1, 1.3, 2, 2.5];
+            // Store current zoom index on the image element
+            if (typeof img._zoomIdx === 'undefined') img._zoomIdx = 0;
+            img._zoomIdx = (img._zoomIdx + 1) % zoomLevels.length;
+            img.style.transform = `scale(${zoomLevels[img._zoomIdx]})`;
+            img.style.cursor = img._zoomIdx === 0 ? 'zoom-in' : 'zoom-out';
         }
-    }
-});
 
-let dragStart = null;
-let imgStart = { x: 0, y: 0 };
 
-// Enhanced image drag in zoom mode with bounds and smoothness
-document.getElementById('modalImg').addEventListener('mousedown', function(e) {
-    const img = this;
-    if (img._zoomIdx && img._zoomIdx > 0) {
-    dragStart = { x: e.clientX, y: e.clientY };
-    // Extract translate values (allow negative/decimal)
-    const match = img.style.transform.match(/translate\((-?\d+(?:\.\d+)?)px,\s*(-?\d+(?:\.\d+)?)px\)/);
-    imgStart.x = match ? parseFloat(match[1]) : 0;
-    imgStart.y = match ? parseFloat(match[2]) : 0;
-    document.body.style.cursor = 'grabbing';
-    e.preventDefault();
-    }
-});
+        function updateModalImg() {
+            const img = document.getElementById('modalImg');
+            img.src = projectScreens[currentProject][currentScreen];
+            img.style.transform = 'scale(1)'; // Reset zoom on image change
+            isZoomed = false;
+            img.style.cursor = 'zoom-in';
+            // Hide prev/next if at ends
+            document.getElementById('modalPrev').style.visibility = currentScreen > 0 ? 'visible' : 'hidden';
+            document.getElementById('modalNext').style.visibility = currentScreen < projectScreens[currentProject].length - 1 ? 'visible' : 'hidden';
+        }
 
-document.addEventListener('mousemove', function(e) {
-    const img = document.getElementById('modalImg');
-    if (dragStart && img._zoomIdx && img._zoomIdx > 0) {
-    let dx = e.clientX - dragStart.x;
-    let dy = e.clientY - dragStart.y;
-    let scale = currentType === 'flutter' ? [1.3, 1.6, 2, 2.5][img._zoomIdx] : [2, 2.3, 2.5, 3][img._zoomIdx];
-    // Calculate bounds
-    const modal = document.getElementById('workModal');
-    const modalRect = modal.getBoundingClientRect();
-    const imgRect = img.getBoundingClientRect();
-    const imgW = img.naturalWidth * scale;
-    const imgH = img.naturalHeight * scale;
-    const maxX = Math.max(0, (imgW - modalRect.width) / 2);
-    const maxY = Math.max(0, (imgH - modalRect.height) / 2);
+        let dragStart = null;
+        let imgStart = { x: 0, y: 0 };
 
-    let tx = imgStart.x + dx;
-    let ty = imgStart.y + dy;
-    // Clamp translate so image can't be dragged out of modal
-    tx = Math.max(-maxX, Math.min(maxX, tx));
-    ty = Math.max(-maxY, Math.min(maxY, ty));
+        // Enhanced image drag in zoom mode with bounds and smoothness
+        document.getElementById('modalImg').addEventListener('mousedown', function(e) {
+            const img = this;
+            if (img._zoomIdx && img._zoomIdx > 0) {
+            dragStart = { x: e.clientX, y: e.clientY };
+            // Extract translate values (allow negative/decimal)
+            const match = img.style.transform.match(/translate\((-?\d+(?:\.\d+)?)px,\s*(-?\d+(?:\.\d+)?)px\)/);
+            imgStart.x = match ? parseFloat(match[1]) : 0;
+            imgStart.y = match ? parseFloat(match[2]) : 0;
+            document.body.style.cursor = 'grabbing';
+            e.preventDefault();
+            }
+        });
 
-    img.style.transform = `scale(${scale}) translate(${tx}px, ${ty}px)`;
-    }
-});
+        document.addEventListener('mousemove', function(e) {
+            const img = document.getElementById('modalImg');
+            if (dragStart && img._zoomIdx && img._zoomIdx > 0) {
+            let dx = e.clientX - dragStart.x;
+            let dy = e.clientY - dragStart.y;
+            let scale = [1, 1.3, 2, 2.5][img._zoomIdx];
+            // Calculate bounds
+            const modal = document.getElementById('workModal');
+            const modalRect = modal.getBoundingClientRect();
+            const imgRect = img.getBoundingClientRect();
+            const imgW = img.naturalWidth * scale;
+            const imgH = img.naturalHeight * scale;
+            const maxX = Math.max(0, (imgW - modalRect.width) / 2);
+            const maxY = Math.max(0, (imgH - modalRect.height) / 2);
 
-document.addEventListener('mouseup', function(e) {
-    if (dragStart) {
-    dragStart = null;
-    document.body.style.cursor = '';
-    }
-});
+            let tx = imgStart.x + dx;
+            let ty = imgStart.y + dy;
+            // Clamp translate so image can't be dragged out of modal
+            tx = Math.max(-maxX, Math.min(maxX, tx));
+            ty = Math.max(-maxY, Math.min(maxY, ty));
 
-// Reset translate on zoom out or image change
-function resetImgTransform() {
-    const img = document.getElementById('modalImg');
-    img.style.transform = currentType === 'flutter' ? 'scale(1.3)' : 'scale(2)';
-    imgStart = { x: 0, y: 0 };
-}
-const origToggleZoom = toggleZoom;
-toggleZoom = function() {
-    const img = document.getElementById('modalImg');
-    const prevZoom = img._zoomIdx || 0;
-    origToggleZoom();
-    if ((img._zoomIdx || 0) === 0) {
-        resetImgTransform();
-    } else if (prevZoom === 0 && img._zoomIdx > 0) {
-        const zoomLevels = currentType === 'flutter' ? [1.3, 1.6, 2, 2.5] : [2, 2.3, 2.5, 3];
-        img.style.transform = `scale(${zoomLevels[img._zoomIdx]}) translate(0px,0px)`;
-        imgStart = { x: 0, y: 0 };
-    }
-};
+            img.style.transform = `scale(${scale}) translate(${tx}px, ${ty}px)`;
+            }
+        });
 
-document.getElementById('modalPrev').onclick = function(e) {
-    if (currentScreen > 0) {
-    currentScreen--;
-    updateModalImg();
-    }
-};
-document.getElementById('modalNext').onclick = function(e) {
-    if (currentScreen < (currentType === 'flutter' ? flutterScreens : cppScreens)[currentProject].length - 1) {
-    currentScreen++;
-    updateModalImg();
-    }
-};
-window.addEventListener('keydown', function(e) {
-    if (document.getElementById('workModal').style.display === 'flex') {
-    if (e.key === 'ArrowLeft' && currentScreen > 0) {
-        currentScreen--;
-        updateModalImg();
-    }
-    if (e.key === 'ArrowRight' && currentScreen < (currentType === 'flutter' ? flutterScreens : cppScreens)[currentProject].length - 1) {
-        currentScreen++;
-        updateModalImg();
-    }
-    if (e.key === 'Escape') closeModal();
-    if (e.key === 'z' || e.key === 'Z') toggleZoom(); // 'z' or 'Z' to toggle zoom
-    }
-});
-document.getElementById('workModal').addEventListener('click', function(e) {
-    if (e.target === this) closeModal();
-});
-</script>
+        document.addEventListener('mouseup', function(e) {
+            if (dragStart) {
+            dragStart = null;
+            document.body.style.cursor = '';
+            }
+        });
+
+        // Reset translate on zoom out or image change
+        function resetImgTransform() {
+            const img = document.getElementById('modalImg');
+            img.style.transform = 'scale(1)';
+            imgStart = { x: 0, y: 0 };
+        }
+        const origToggleZoom = toggleZoom;
+        toggleZoom = function() {
+            const img = document.getElementById('modalImg');
+            const prevZoom = img._zoomIdx || 0;
+            origToggleZoom();
+            if ((img._zoomIdx || 0) === 0) {
+                resetImgTransform();
+            } else if (prevZoom === 0 && img._zoomIdx > 0) {
+                img.style.transform = `scale(${[1, 1.3, 2, 2.5][img._zoomIdx]}) translate(0px,0px)`;
+                imgStart = { x: 0, y: 0 };
+            }
+        };
+
+        document.getElementById('modalPrev').onclick = function(e) {
+            if (currentScreen > 0) {
+            currentScreen--;
+            updateModalImg();
+            }
+        };
+        document.getElementById('modalNext').onclick = function(e) {
+            if (currentScreen < projectScreens[currentProject].length - 1) {
+            currentScreen++;
+            updateModalImg();
+            }
+        };
+        window.addEventListener('keydown', function(e) {
+            if (document.getElementById('workModal').style.display === 'flex') {
+            if (e.key === 'ArrowLeft' && currentScreen > 0) {
+                currentScreen--;
+                updateModalImg();
+            }
+            if (e.key === 'ArrowRight' && currentScreen < projectScreens[currentProject].length - 1) {
+                currentScreen++;
+                updateModalImg();
+            }
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'z' || e.key === 'Z') toggleZoom(); // 'z' or 'Z' to toggle zoom
+            }
+        });
+        document.getElementById('workModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        </script>
+
+        <style>
+        .work__container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .work__item {
+            flex: 1 1 250px;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .work__img img {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .work__img img:hover {
+            transform: scale(1.05);
+        }
+        .work__info {
+            margin-top: 0.7rem;
+            text-align: center;
+        }
+        .work__project-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .work__button {
+            margin-top: 0.3rem;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 900px) {
+            .work__container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .work__item {
+                max-width: 90vw;
+            }
+        }
+        </style>
+
 
 <style>
 .work__container {
@@ -570,21 +531,96 @@ document.getElementById('workModal').addEventListener('click', function(e) {
 }
 </style>
 
-        <!--===== CONTACT =====-->
-        <section class="contact section" id="contact">
-            <h2 class="section-title">Contact</h2>
 
-            <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input">
-                    <input type="mail" placeholder="Email" class="contact__input">
-                    <textarea type="text" placeholder="Enter your messege here..." class="contact__input" cols="0"
-                        rows="10" class="contact__input"></textarea>
-                    <input type="button" value="Enter" class="contact__button button">
-                </form>
-            </div>
-        </section>
-    </main>
+        <!-- Contact Section -->
+         <section class="contact section" id="contact">
+  <h2 class="section-title">Contact</h2>
+  <div class="contact__container bd-grid">
+    <form id="contact-form" action="https://formsubmit.co/deyanzcoding@gmail.com" method="POST" class="contact__form">
+      
+      <!-- Name -->
+      <input type="text" name="name" placeholder="Name" class="contact__input" required>
+      
+      <!-- Email -->
+      <input type="email" name="email" placeholder="Email" class="contact__input" required>
+      
+      <!-- Message -->
+      <textarea name="message" placeholder="Enter your message here..." class="contact__input" rows="10" required></textarea>
+      
+      <!-- Submit Button -->
+      <button type="submit" class="contact__button button">Send</button>
+
+      <!-- Hidden settings -->
+      <input type="hidden" name="_captcha" value="false">
+    </form>
+
+   <!-- Success Message -->
+<p id="success-message" 
+   style="display:none; 
+          background: linear-gradient(135deg, #d4edda, #c3e6cb);
+          color: #155724; 
+          border-left: 6px solid #28a745; 
+          padding: 15px 20px; 
+          border-radius: 6px; 
+          margin-top: 20px; 
+          font-weight: 500; 
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          text-align: left; 
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          transition: opacity 0.5s ease;">
+</p>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-message');
+
+  // Array of romantic success messages
+  const romanticMessages = [
+    "💌 Your words reached me like a secret love letter. 🌹",
+    "🌙 Your message arrived softly, like moonlight touching my heart.",
+    "❤️ Message delivered — and my inbox is smiling because of you.",
+    "✨ Your words fluttered in like a butterfly carrying whispers of love.",
+    "🔥 Your message sparked a little fire in my soul.",
+    "🌹 Your message has reached my heart. Thank you for writing to me.",
+    "💕 Thank you, my dear. Your message feels like a gentle embrace.",
+    "🎉 Thanks, your message has been sent! I\'ll get back to you as soon as possible."
+  ];
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // stop default form submission
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData
+    }).then(response => {
+      if (response.ok) {
+        // Pick a random romantic message
+        const randomMsg = romanticMessages[Math.floor(Math.random() * romanticMessages.length)];
+        successMsg.textContent = randomMsg;
+
+        // Show the message
+        successMsg.style.display = "block";
+
+        // Clear form fields
+        form.reset();
+
+        // Hide message after 3 sec
+        setTimeout(() => {
+          successMsg.style.display = "none";
+        }, 5000);
+      } else {
+        alert("❌ Something went wrong, please try again.");
+      }
+    }).catch(error => alert("❌ Error: " + error));
+  });
+</script>
+
+
+
 
     <!--===== FOOTER =====-->
     <footer class="footer">
