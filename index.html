@@ -169,26 +169,138 @@
             <h2 class="section-title">Work</h2>
 
             <div class="work__container bd-grid">
-                <a href="" class="work__img">
-                    <img src="/assets/screenshots/dashboard-portrait.png" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/screenshots/status_tab-portrait.png" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/screenshots/calculator.png" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/screenshots/Student_Attendence_System/main.png" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/work5.jpg" alt="">
-                </a>
-                <a href="" class="work__img">
-                    <img src="assets/img/work6.jpg" alt="">
-                </a>
+                <!-- Project 1 -->
+                <div class="work__item">
+                    <a href="assets/screenshots/dashboard-portrait.png" class="work__img" onclick="openModal(event, 'assets/screenshots/dashboard-portrait.png')">
+                        <img src="assets/screenshots/dashboard-portrait.png" alt="Dashboard">
+                    </a>
+                    <div class="work__info">
+                        <p class="work__project-name">Dashboard App</p>
+                        <a href="https://github.com/deyanzcoding/dashboard-app" target="_blank" class="button work__button">View GitHub</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="work__item">
+                    <a href="assets/screenshots/status_tab-portrait.png" class="work__img" onclick="openModal(event, 'assets/screenshots/status_tab-portrait.png')">
+                        <img src="assets/screenshots/status_tab-portrait.png" alt="Status Tab">
+                    </a>
+                    <div class="work__info">
+                        <p class="work__project-name">Status Tab App</p>
+                        <a href="https://github.com/deyanzcoding/status-tab-app" target="_blank" class="button work__button">View GitHub</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="work__item">
+                    <a href="assets/screenshots/calculator.png" class="work__img" onclick="openModal(event, 'assets/screenshots/calculator.png')">
+                        <img src="assets/screenshots/calculator.png" alt="Calculator">
+                    </a>
+                    <div class="work__info">
+                        <p class="work__project-name">Calculator App</p>
+                        <a href="https://github.com/deyanzcoding/calculator-app" target="_blank" class="button work__button">View GitHub</a>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="work__item">
+                    <a href="assets/screenshots/Student_Attendence_System/main.png" class="work__img" onclick="openModal(event, 'assets/screenshots/Student_Attendence_System/main.png')">
+                        <img src="assets/screenshots/Student_Attendence_System/main.png" alt="Student Attendance System">
+                    </a>
+                    <div class="work__info">
+                        <p class="work__project-name">Student Attendance System</p>
+                        <a href="https://github.com/deyanzcoding/student-attendance-system" target="_blank" class="button work__button">View GitHub</a>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="work__item">
+                    <a href="assets/screenshots/tailer_management_system/tailer management system (1)-front.png" class="work__img" onclick="openModal(event, 'assets/screenshots/tailer_management_system/tailer management system (1)-front.png')">
+                        <img src="assets/screenshots/tailer_management_system/tailer management system (1)-front.png" alt="Tailer Management System">
+                    </a>
+                    <div class="work__info">
+                        <p class="work__project-name">Tailer Management System</p>
+                        <a href="https://github.com/deyanzcoding/tailer-management-system" target="_blank" class="button work__button">View GitHub</a>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="work__item">
+                    <a href="assets/screenshots/gpa_calculator/gpa calculator (1)-front.png" class="work__img" onclick="openModal(event, 'assets/screenshots/gpa_calculator/gpa calculator (1)-front.png')">
+                        <img src="assets/screenshots/gpa_calculator/gpa calculator (1)-front.png" alt="GPA Calculator">
+                    </a>
+                    <div class="work__info">
+                        <p class="work__project-name">GPA Calculator</p>
+                        <a href="https://github.com/deyanzcoding/gpa-calculator" target="_blank" class="button work__button">View GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal for image preview -->
+            <div id="workModal" class="work__modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); align-items:center; justify-content:center;">
+                <span style="position:absolute;top:30px;right:40px;font-size:40px;color:#fff;cursor:pointer;" onclick="closeModal()">&times;</span>
+                <img id="modalImg" src="" alt="Project Preview" style="max-width:90vw; max-height:80vh; display:block; margin:auto; border-radius:10px;">
             </div>
         </section>
+
+        <script>
+        function openModal(event, imgSrc) {
+            event.preventDefault();
+            document.getElementById('workModal').style.display = 'flex';
+            document.getElementById('modalImg').src = imgSrc;
+        }
+        function closeModal() {
+            document.getElementById('workModal').style.display = 'none';
+            document.getElementById('modalImg').src = '';
+        }
+        window.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+        document.getElementById('workModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+        </script>
+
+        <style>
+        .work__container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .work__item {
+            flex: 1 1 250px;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .work__img img {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .work__img img:hover {
+            transform: scale(1.05);
+        }
+        .work__info {
+            margin-top: 0.7rem;
+            text-align: center;
+        }
+        .work__project-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .work__button {
+            margin-top: 0.3rem;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 900px) {
+            .work__container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .work__item {
+                max-width: 90vw;
+            }
+        }
+        </style>
 
         <!--===== CONTACT =====-->
         <section class="contact section" id="contact">
