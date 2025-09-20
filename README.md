@@ -17,10 +17,10 @@ Below are some screenshots showcasing different sections of the portfolio websit
 
 ![Home](assets/screenshots/website_screenshots/homeme.png)
 ![About](assets/screenshots/website_screenshots/aboutme.png)
-![Projects](assets/screenshots/website_screenshots/projects.png)
-![Contact](assets/screenshots/website_screenshots/contact.png)
+![Projects](assets/screenshots/website_screenshots/skillsme.png)
+![Contact](assets/screenshots/website_screenshots/workme.png)
 
 
 
-![preview img](assets/screenshots/website_screenshots/homeme.png)
+<!-- ![preview img](assets/screenshots/website_screenshots/homeme.png) -->
 
