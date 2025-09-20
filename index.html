@@ -30,6 +30,8 @@
                     <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
                     <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+                    <li class="nav__item"><a href="myCV.html" target="_blank" class="nav__link nav__resume">My
+                            Resume</a></li>
                 </ul>
             </div>
 
@@ -456,6 +458,33 @@
         </script>
 
         <style>
+            /* Resume nav item (button style) */
+            .nav__resume {
+                background-color: var(--first-color);
+                /* theme background */
+                color: #fff !important;
+                /* white text */
+                padding: 0.4rem 1rem;
+                /* button padding */
+                border-radius: 5px;
+                /* rounded edges */
+                font-weight: bold;
+                text-decoration: none;
+                /* remove underline */
+                transition: 0.3s ease, transform 0.2s ease;
+            }
+
+            /* Hover effect */
+            .nav__resume:hover {
+                background-color: var(--first-color-alt);
+                /* slightly darker theme color */
+                color: black !important;
+                /* white text */
+                transform: scale(1.05);
+                /* subtle zoom */
+            }
+
+
             .work__container {
                 display: flex;
                 flex-wrap: wrap;
@@ -498,6 +527,17 @@
             }
 
             @media (max-width: 900px) {
+                /* Hover effect of resume nav */
+            .nav__resume:hover {
+                background-color: var(--first-color-alt);
+                /* slightly darker theme color */
+                color: white !important;
+                /* white text */
+                transform: scale(1.05);
+                /* subtle zoom */
+            }
+
+               
                 .work__container {
                     flex-direction: column;
                     align-items: center;
@@ -567,148 +607,186 @@
                 font-size: 0.95rem;
             }
 
-           @media (max-width: 900px) {
+            @media (max-width: 900px) {
 
-    /* ========== WORK SECTION (Mobile) ========== */
-    .work__container {
-        flex-direction: column;      /* Stack items vertically */
-        align-items: center;         /* Center items */
-    }
+                /* ========== WORK SECTION (Mobile) ========== */
+                .work__container {
+                    flex-direction: column;
+                    /* Stack items vertically */
+                    align-items: center;
+                    /* Center items */
+                }
 
-    .work__item {
-        max-width: 90vw;             /* Keep project items within viewport */
-    }
+                .work__item {
+                    max-width: 90vw;
+                    /* Keep project items within viewport */
+                }
 
-    /* ========== HOME BUTTON (Mobile) ========== */
-    .home__data .button {
-        padding: 0.4rem 1.2rem;      /* Smaller padding for button */
-        font-size: 0.80rem;          /* Smaller text size */
-    }
+                /* ========== HOME BUTTON (Mobile) ========== */
+                .home__data .button {
+                    padding: 0.4rem 1.2rem;
+                    /* Smaller padding for button */
+                    font-size: 0.80rem;
+                    /* Smaller text size */
+                }
 
-    /* ========== HOME SECTION (Mobile CV Style) ========== */
-    .home {
-        position: relative;
-        display: flex;
-        flex-direction: column;      /* Stack content vertically */
-        justify-content: flex-start;
-        padding: 5rem 1rem 2rem 1rem;
-        min-height: 100vh;
-        text-align: left;            /* Left-align text like a CV */
-    }
+                /* ========== HOME SECTION (Mobile CV Style) ========== */
+                .home {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    /* Stack content vertically */
+                    justify-content: flex-start;
+                    padding: 5rem 1rem 2rem 1rem;
+                    min-height: 100vh;
+                    text-align: left;
+                    /* Left-align text like a CV */
+                }
 
-    /* Title inside Home (Mobile) */
-    .home__title {
-        font-size: 1.2rem;           /* Comfortable font size for mobile */
-        line-height: 1.4;
-        margin-right: 140px;         /* Leave space for profile pic */
-    }
+                /* Title inside Home (Mobile) */
+                .home__title {
+                    font-size: 1.2rem;
+                    /* Comfortable font size for mobile */
+                    line-height: 1.4;
+                    margin-right: 140px;
+                    /* Leave space for profile pic */
+                }
 
-    /* Colored span in title */
-    .home__title-color {
-        color: var(--first-color);   /* Accent color */
-    }
+                /* Colored span in title */
+                .home__title-color {
+                    color: var(--first-color);
+                    /* Accent color */
+                }
 
-    /* Profile Picture (Mobile) */
-    .home__img {
-        position: absolute;          /* Fix it at top-right */
-        top: 70px;                   /* Below navbar */
-        right: 35px;                 /* Align right */
-        width: 100px;                /* Small size */
-        height: auto;
-    }
+                /* Profile Picture (Mobile) */
+                .home__img {
+                    position: absolute;
+                    /* Fix it at top-right */
+                    top: 70px;
+                    /* Below navbar */
+                    right: 35px;
+                    /* Align right */
+                    width: 100px;
+                    /* Small size */
+                    height: auto;
+                }
 
-    .home__img svg {
-        width: 120px;                /* SVG container size */
-    }
+                .home__img svg {
+                    width: 120px;
+                    /* SVG container size */
+                }
 
-    .home__blob-img {
-        width: 380px;                /* Actual image inside blob */
-    }
+                .home__blob-img {
+                    width: 380px;
+                    /* Actual image inside blob */
+                }
 
-    /* Social Icons (Mobile) */
-  .home__social {
-    margin-top: 2rem;        /* little gap below button */
-    margin-left: 5rem;
-    display: flex;
-    justify-content: center;   /* center horizontally */
-    gap: 1.5rem;
-    position: static;          /* remove absolute positioning */
-}
-}
+                /* Social Icons (Mobile) */
+                .home__social {
+                    margin-top: 2rem;
+                    /* little gap below button */
+                    margin-left: 4rem;
+                    display: flex;
+                    justify-content: center;
+                    /* center horizontally */
+                    gap: 1.5rem;
+                    position: static;
+                    /* remove absolute positioning */
+                }
 
-/* ========== HOME SECTION (Desktop) ========== */
-@media screen and (min-width: 768px) {
+                .home__social-icon {
+                    font-size: 2rem;
+                    /* increase size (default was ~2rem) */
+                    transition: transform 0.2s;
+                }
 
-    .home {
-        flex-direction: row;         /* Side-by-side layout */
-        align-items: center;
-        justify-content: space-between;
-        padding: 6rem 2rem 2rem 2rem;
-    }
 
-    .home__title {
-        font-size: 2.5rem;           /* Larger title for desktop */
-        margin-right: 0;
-    }
+            }
 
-    .home__img {
-        position: static;            /* Inline in layout */
-        width: 220px;                /* Larger size */
-        margin-left: auto;
-    }
+            /* ========== HOME SECTION (Desktop) ========== */
+            @media screen and (min-width: 768px) {
 
-    .home__img svg {
-        width: 220px;
-    }
+                .home {
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 6rem 2rem 2rem 2rem;
+                }
 
-    .home__blob-img {
-        width: 320px;
-    }
+                .home__title {
+                    font-size: 2.5rem;
+                    margin-right: 0;
+                }
 
-    /* Social Icons (Desktop) */
-    .home__social {
-        margin-top: 1rem;
-        display: flex;
-        flex-direction: row;         /* Inline row */
-        gap: 1rem;
-        justify-content: flex-start;
-    }
-}
+                /* Profile Picture (keep same place & size as before) */
+                .home__img {
+                    position: absolute;
+                    /* stay at top-right */
+                    top: 110px;
+                    right: 160px;
+                    width: 220px;
+                    /* same size */
+                }
 
-/* ========== WORK SECTION (Responsive Grid) ========== */
-.work__container {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto grid */
-    padding: 1rem;
-}
+                .home__img svg {
+                    width: 320px;
+                }
 
-.work__item img {
-    height: 200px;
-    object-fit: cover;               /* Crop nicely */
-}
+                .home__blob-img {
+                    width: 380px;
+                }
 
-/* ========== BASE STYLES (Mobile) ========== */
-body {
-    padding: 0 1rem;
-    line-height: 1.6;
-}
+                /* Social Icons (Desktop) */
+                .home__social {
+                    margin-top: -2rem;
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1rem;
+                    justify-content: flex-start;
+                }
 
-.section {
-    padding: 4rem 1rem;
-}
+                .home__social-icon {
+                    font-size: 2.2rem;
+                    /* increase size (default was ~2rem) */
+                }
 
-/* ========== BASE STYLES (Desktop) ========== */
-@media screen and (min-width: 1024px) {
-    body {
-        padding: 0;
-    }
+            }
 
-    .section {
-        padding: 6rem 2rem;
-    }
-}
+            /* ========== WORK SECTION (Responsive Grid) ========== */
+            .work__container {
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                /* Auto grid */
+                padding: 1rem;
+            }
 
+            .work__item img {
+                height: 200px;
+                object-fit: cover;
+                /* Crop nicely */
+            }
+
+            /* ========== BASE STYLES (Mobile) ========== */
+            body {
+                padding: 0 1rem;
+                line-height: 1.6;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            /* ========== BASE STYLES (Desktop) ========== */
+            @media screen and (min-width: 1024px) {
+                body {
+                    padding: 0;
+                }
+
+                .section {
+                    padding: 6rem 2rem;
+                }
+            }
         </style>
 
 
