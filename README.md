@@ -1,14 +1,26 @@
 # Portfolio Responsive Complete
-## [Watch it on youtube](https://youtu.be/AKNvTxWOdKw)
-### Portfolio Responsive Complete
 
-- Responsive Personal Portfolio Website HTML CSS & JavaScript.
-- Contains animations when scrolling.
-- Smooth scrolling in each section.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
 
-💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/@Bedimcode)
+## Features
 
-![preview img](/preview.png)
+- **Modern Design:** Clean and visually appealing layout with a focus on usability.
+- **Fully Responsive:** Adapts seamlessly to mobile, tablet, and desktop screens.
+- **Animated Elements:** Engaging animations triggered on scroll for a dynamic user experience.
+- **Smooth Navigation:** Easy navigation with smooth scrolling between sections.
+- **Mobile First:** Designed with mobile users in mind, then enhanced for larger screens.
+- **Cross-Browser Compatibility:** Works consistently across all major browsers.
+- **Easy Customization:** Well-structured codebase for effortless updates and personalization.
+
+## Website Screenshots
+
+Below are some screenshots showcasing different sections of the portfolio website:
+
+![Home](assets/screenshots/website_screenshots/homeme.png)
+![About](assets/screenshots/website_screenshots/aboutme.png)
+![Projects](assets/screenshots/website_screenshots/projects.png)
+![Contact](assets/screenshots/website_screenshots/contact.png)
+
+
+
+![preview img](assets/screenshots/website_screenshots/homeme.png)
 
