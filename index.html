@@ -47,7 +47,7 @@
                 <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Deyan</span><br> Flutter Developer.
                 </h1>
 
-                <a href="#contact" class="button">Contact with me</a>
+                <a href="#contact" class="button ">Contact with me</a>
             </div>
 
             <div class="home__social">
@@ -536,6 +536,12 @@
         flex-direction: column;
         align-items: center;
     }
+
+.home__data .button {
+  padding: 0.4rem 1.2rem;
+  font-size: 0.80rem;
+}
+
     .work__item {
         max-width: 90vw;
     }
@@ -555,7 +561,7 @@
 
 /* Text Title */
 .home__title {
-  font-size: 1.6rem;   /* comfortable for mobile */
+  font-size: 1.2rem;   /* comfortable for mobile */
   line-height: 1.4;
   margin-right: 140px; /* leave space for profile pic */
 }
@@ -567,18 +573,19 @@
 /* Profile Picture Top-Right */
 .home__img {
   position: absolute;
-  top: 70px;   /* below navbar */
-  right: 15px;
+  top: 30px;   /* below navbar */
+  right: 35px;
+  bottom: 50;
   width: 100px;  /* small for mobile */
   height: auto;
 }
 
 .home__img svg {
-  width: 100px;
+  width: 120px;
 }
 
 .home__blob-img {
-  width: 320px;
+  width: 380px;
 }
 
 /* Social Icons under text */
